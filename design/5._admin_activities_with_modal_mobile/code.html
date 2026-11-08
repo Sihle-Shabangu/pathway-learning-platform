@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Activities - Pathway</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body{min-height:max(884px,100dvh);}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#dee1ff", "surface-tint": "#304fd8", "on-secondary": "#ffffff", "tertiary": "#633f00", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#643f00", "outline-variant": "#c4c5d7", "surface-dim": "#d1d9fb", "primary-fixed-dim": "#b9c3ff", "surface-container-low": "#f3f3ff", "surface-container": "#ebedff", "inverse-on-surface": "#eff0ff", "on-primary-fixed": "#001258", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#0433c1", "on-tertiary-container": "#ffd095", "on-background": "#121a34", "tertiary-fixed-dim": "#ffb957", "on-surface-variant": "#444654", "surface-container-high": "#e3e7ff", "tertiary-fixed": "#ffddb5", "surface-container-highest": "#dbe1ff", "error": "#ba1a1a", "inverse-surface": "#272f4a", "surface-variant": "#dbe1ff", "primary-container": "#2f4fd8", "background": "#faf8ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-primary-container": "#d0d6ff", "outline": "#747686", "secondary": "#006a64", "error-container": "#ffdad6", "tertiary-container": "#835400", "surface": "#faf8ff", "on-surface": "#121a34", "secondary-container": "#81f6eb", "secondary-fixed-dim": "#63d9cf", "on-secondary-fixed-variant": "#00504b", "surface-bright": "#faf8ff", "on-secondary-container": "#00716a", "on-secondary-fixed": "#00201e", "inverse-primary": "#b9c3ff", "secondary-fixed": "#81f6eb", "on-error": "#ffffff", "on-tertiary-fixed": "#2a1800", "primary": "#0333c0" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem" }, fontFamily: { "headline-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "code-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }], "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(18,26,52,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Pathway Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrADqBDUxHPdSqZocTuBjcYiwEtUmk3z2onaxFyEIkbPHF2xTLqb9Lxl9bQ1E8q1iU4JIy0AdhfRYQY3hPcJaXWSCP8B7_FvSZVKVkEbBN9kCcyYcZVhTV2HXFz9z2jH6h5ijRzZ-UsCKQbqfzWRsbFwCTQA7_SGxCTtNzsu4zyablsN_R5Nb3i61Qv1DAejZ5Qip8CbM0rYa9aZb5xjo12u0yvnatoYPTQOGp_tdwt7"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-on-surface-variant leading-none truncate">Pathway</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Activities</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Switch Role or View" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">swap_horiz</span></button></div></div></header><main class="flex-1 w-full pt-16 pb-20 bg-surface px-margin-mobile"><div class="flex flex-col w-full relative">
+<div class="flex items-center justify-between gap-space-sm pt-space-xs pb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Activities</span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full">14 active</span>
+</div>
+<button class="h-10 px-space-md bg-primary text-on-primary font-label-md text-label-md rounded-lg shadow-sm flex items-center gap-1 active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>New</span>
+</button>
+</div>
+<div class="relative w-full mb-space-sm">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest text-on-surface rounded-lg font-body-md text-body-md placeholder:text-on-surface-variant outline-none shadow-sm" placeholder="Search modules, tags or cohort..." type="text"/>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-sm mb-space-sm -mx-margin-mobile px-margin-mobile">
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary shadow-sm flex-shrink-0" type="button">
+      All (28)
+    </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant flex-shrink-0 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">science</span>
+      Simulations (16)
+    </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant flex-shrink-0 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">terminal</span>
+      Labs (12)
+    </button>
+<button class="px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant flex-shrink-0" type="button">
+      Drafts (3)
+    </button>
+</div>
+<div class="flex flex-col gap-space-md opacity-40 pointer-events-none select-none">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container text-primary font-label-sm text-label-sm px-2.5 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">science</span>
+            Simulation
+          </span>
+<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+            45 mins
+          </span>
+</div>
+<span class="font-code-md text-code-md text-secondary font-semibold">HW-204</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Hardware Troubleshooting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sub-module: Dead Workstation Diagnostics &amp; Motherboard Rail Analysis</p>
+</div>
+<div class="flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Cohort Completion Rate</span>
+<span class="font-code-md text-code-md text-on-surface font-semibold">84%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-[84%]"></div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-6 w-6 rounded-full ring-2 ring-surface-container-lowest" data-alt="Close-up headshot of student Lerato K. in academic laboratory setting with soft cool blue key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBReoJE7qQZe0PjlRHB1AbBxfpkKZ2owjCW2UEA_jnfv9yyAt8IdPJTcrUZCaJvAJ3bH1Rtq8LNpzA5V6Xwhdp3fvtbfYfQKOrhXuCHj5_FGLbdXX-DKy-tElsDOCuDqu3eaVA_yXlkPLYAht5Ng3KzHG_ettewTPupKOprO1biQmbvAYWhcwvugE2xEK72VfPBoAx3tFnNEP-ukCFsf8FoxAn-Q7Drw51DEwCgcc"/>
+<img class="inline-block h-6 w-6 rounded-full ring-2 ring-surface-container-lowest" data-alt="Portrait photo of trainee Thabo M. wearing university ID badge against a neutral studio backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPo4bBN3IuP-3Y6YAfy69Z8yksaGGWrHPlgDQvYUDnjiQuxIvedhiK-IfbFsidc8XPytrRyhSrzG7PTkSshttXDO_cAaZaij4yFsQCBgPDCEaEk8sEph0JsUkIe0xIoI9cqHMRXJrczfng7Ay4uKGJB-ql_19qPs7VaYC8oxV1L0xe-w-XAvOkgM3_MWs2PQCAfNR2HIXxUfYglNFPUFoBRTtr2UIUifYxsBmBGfM"/>
+<div class="h-6 w-6 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] flex items-center justify-center font-bold ring-2 ring-surface-container-lowest">+18</div>
+</div>
+<button class="h-9 px-4 bg-primary text-on-primary font-label-md text-label-md rounded-lg" type="button">Assign</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2.5 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">router</span>
+            Lab
+          </span>
+<span class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+            60 mins
+          </span>
+</div>
+<span class="font-code-md text-code-md text-secondary font-semibold">NET-109</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Network Diagnostics</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">VLAN packet loss, gateway ping jitter &amp; subnet configuration</p>
+</div>
+<div class="flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface-variant">Cohort Completion Rate</span>
+<span class="font-code-md text-code-md text-on-surface font-semibold">72%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full w-[72%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-[3px] flex flex-col justify-end" id="assign-modal-scrim">
+<div class="w-full max-h-[813px] bg-surface-container-lowest rounded-t-2xl shadow-xl flex flex-col overflow-hidden animate-[slideUp_0.25s_ease-out]">
+<div class="pt-3 pb-1 flex flex-col items-center flex-shrink-0 cursor-grab active:cursor-grabbing">
+<div class="w-10 h-1 bg-outline-variant rounded-full"></div>
+</div>
+<div class="px-space-md py-space-xs flex items-center justify-between flex-shrink-0">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Assign Activity</h2>
+</div>
+<button aria-label="Close dialog" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant bg-surface-container-low active:scale-95 transition-transform" id="close-modal-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="overflow-y-auto px-space-md pb-4 flex flex-col gap-space-md flex-1">
+<div class="bg-surface-container-low rounded-xl p-3.5 flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex-shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Technical illustration of an open computer motherboard with lit diagnostic status LEDs and circuit microchips in deep navy and vibrant cyan tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI9D-H2Wif6vD6HXuV37LQImJRPzRjhW1uHPdL44qynCnK_UJ4eCpcrpZa87IdUmflIPFvQ4O1b4G7f-aotGpZlqtG2Eg8pWQvOrkhJLSVt4Ty4LKjYuQXbFZ9Q6f-ABHNXEMhvtZ5PB3b2BIF7VrRDw4ftQXB2_m4E9Ri7YIbDRgtLcXQvfHMtBUHwy-2CGrhzRdrIPJyOUR8KcMywv8Lulkg3nsmDsm3uY3wPtA"/>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-code-md text-[11px] text-primary font-semibold uppercase">HW-204</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Interactive 3D Sim</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight mt-0.5">Hardware Troubleshooting: Dead Workstation</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate">45 mins • Level 2 Systems</p>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold flex items-center justify-between">
+<span>Assign to Learners</span>
+<span class="font-code-md text-code-md text-primary font-medium" id="learner-selected-count">12 selected</span>
+</label>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-11 pl-9 pr-3 bg-surface-container-low text-on-surface rounded-lg font-body-sm text-body-sm placeholder:text-on-surface-variant outline-none focus:bg-surface-container-lowest shadow-sm" id="learner-search-input" placeholder="Search by name, student ID, or cohort..." type="text"/>
+</div>
+<button class="mt-1 w-full min-h-[44px] px-3.5 py-2.5 rounded-lg bg-primary-fixed/60 text-on-primary-fixed flex items-center justify-between text-left active:bg-primary-fixed transition-colors" id="quick-select-cohort-btn" type="button">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[19px]">group_add</span>
+<span class="font-label-md text-label-md font-medium truncate">Select entire Cohort 2025 - Section A</span>
+</div>
+<span class="font-code-md text-label-sm bg-surface-container-lowest px-2 py-0.5 rounded text-primary font-semibold flex-shrink-0">34 students</span>
+</button>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between px-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Roster Check</span>
+<button class="text-primary font-medium active:underline" id="toggle-all-learners-btn" type="button">Deselect all</button>
+</div>
+<div class="bg-surface-container-low rounded-xl p-1.5 flex flex-col gap-1 max-h-48 overflow-y-auto">
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest min-h-[44px] cursor-pointer active:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<img class="w-8 h-8 rounded-full object-cover flex-shrink-0" data-alt="Portrait photo of learner Lerato Khumalo with friendly smile in engineering student campus setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR8AjUU0FojWt6goWeCD4fjezcW7ffSJzjwcvjds7e85dlgOHqQgNqXjXv-cxCkd2zs0S-SrwEKHAVxb6GxlHx7hV8CwlD8xbUXPvMtdc94nGEueRNjIZafzjS_CYN40YBakF_IqkPsvyLYqsxzpmW4VYFvsh1k2UL_u9jYmpsu6x9-PXtVlsTdzPUdCHHbq4zourCu4aNgEQZ-9ItqLWpUDQldwF--8QzIgsQG9U"/>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight">Lerato K.</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate">ID: ST-2025-091 • Sec A</p>
+</div>
+</div>
+<input checked="" class="learner-checkbox w-5 h-5 rounded accent-primary cursor-pointer mr-1" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest min-h-[44px] cursor-pointer active:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<img class="w-8 h-8 rounded-full object-cover flex-shrink-0" data-alt="Portrait photo of student Thabo Molefe looking engaged with laboratory screen reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo9jZBwvxTDhneVmAz0zRazpHHRA3W6xtebEtfiXX03-fvK1KdpVkqeFjYyRD_3yV6_mHGw62h8_bBGFY23n2bKknvg4NG--waFxlS2Sihg7yNkMIyeTOPqSaTGSblM3bOdrdTg6-ynAAf4b9e8ZjnDbfviPkGk1nZ5V3kI6r2Vfd-VX6aYDNYhVKn-Y-33VQQ72U-BBHXI9rnuLuCs7iVLp1-o91bRsXy_Z0AQN0"/>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight">Thabo M.</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate">ID: ST-2025-104 • Sec A</p>
+</div>
+</div>
+<input checked="" class="learner-checkbox w-5 h-5 rounded accent-primary cursor-pointer mr-1" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest min-h-[44px] cursor-pointer active:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md flex items-center justify-center font-semibold flex-shrink-0">
+                  SN
+                </div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight">Sipho N.</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate">ID: ST-2025-118 • Sec A</p>
+</div>
+</div>
+<input checked="" class="learner-checkbox w-5 h-5 rounded accent-primary cursor-pointer mr-1" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest min-h-[44px] cursor-pointer active:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<img class="w-8 h-8 rounded-full object-cover flex-shrink-0" data-alt="Portrait of student Zanele Khanyile smiling with modern technology lab equipment in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCEOSnFerp0rBHiMJcreo0Xj4P6gLkpX94W0Y6Gog07EzpwzpQoSmi3EV0n3bGmalWc_N2mM3I1GO_sDtij_Y_FjwumLNLh-RM1p_ZWdr9ldZ5ApP_AnIMut891cxJ2qrb79dR_SJgDXjCvHl5q_vb4Y4VES6gJyPbTUcDzEBWMfo2K5NFsVUeEIxaPfGfknftbYlfz4m_H5k3Qmuv53kHWBstWQlPh7cTNGHKppo"/>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight">Zanele K.</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate">ID: ST-2025-072 • Sec A</p>
+</div>
+</div>
+<input checked="" class="learner-checkbox w-5 h-5 rounded accent-primary cursor-pointer mr-1" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg bg-surface-container-lowest min-h-[44px] cursor-pointer active:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center justify-center font-semibold flex-shrink-0">
+                  AM
+                </div>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate leading-tight">Ayanda M.</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate">ID: ST-2025-088 • Sec A</p>
+</div>
+</div>
+<input checked="" class="learner-checkbox w-5 h-5 rounded accent-primary cursor-pointer mr-1" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-semibold">Due Date &amp; Submission Window</label>
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium">March 07, 2025</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">11:59 PM SAST (Strict cutoff)</p>
+</div>
+</div>
+<button class="h-9 px-3 rounded-lg bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold active:bg-primary-fixed transition-colors" type="button">
+              Change
+            </button>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">verified_user</span>
+<div class="text-body-sm text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Auto-evaluation enabled:</span> Learners receive instant telemetry grading upon completing the diagnostics sequence.
+          </div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest shadow-[0_-4px_16px_rgba(18,26,52,0.06)] flex items-center gap-space-sm flex-shrink-0">
+<button class="flex-1 min-h-[46px] px-4 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold active:bg-surface-container transition-colors" id="cancel-modal-btn" type="button">
+          Cancel
+        </button>
+<button class="flex-[1.5] min-h-[46px] px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold shadow-md flex items-center justify-center gap-1.5 active:bg-on-primary-fixed-variant transition-colors" id="confirm-assign-btn" type="button">
+<span class="material-symbols-outlined text-[19px]">send</span>
+<span id="assign-btn-label">Assign to 12 learners</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const scrim = document.getElementById('assign-modal-scrim');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const cancelBtn = document.getElementById('cancel-modal-btn');
+    const confirmBtn = document.getElementById('confirm-assign-btn');
+    const cohortBtn = document.getElementById('quick-select-cohort-btn');
+    const toggleAllBtn = document.getElementById('toggle-all-learners-btn');
+    const countDisplay = document.getElementById('learner-selected-count');
+    const assignBtnLabel = document.getElementById('assign-btn-label');
+    const checkboxes = document.querySelectorAll('.learner-checkbox');
+
+    function updateCount() {
+      const activeCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+      const total = activeCount === checkboxes.length ? '12' : activeCount.toString();
+      countDisplay.textContent = total + ' selected';
+      assignBtnLabel.textContent = 'Assign to ' + total + ' learners';
+      toggleAllBtn.textContent = activeCount === 0 ? 'Select all' : 'Deselect all';
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', updateCount);
+    });
+
+    if (toggleAllBtn) {
+      toggleAllBtn.addEventListener('click', function() {
+        const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
+        checkboxes.forEach(cb => cb.checked = !anyChecked);
+        updateCount();
+      });
+    }
+
+    if (cohortBtn) {
+      cohortBtn.addEventListener('click', function() {
+        checkboxes.forEach(cb => cb.checked = true);
+        countDisplay.textContent = '34 selected (Cohort A)';
+        assignBtnLabel.textContent = 'Assign to 34 learners';
+        toggleAllBtn.textContent = 'Deselect all';
+      });
+    }
+
+    function closeModal() {
+      if (scrim) scrim.style.display = 'none';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', function() {
+        confirmBtn.innerHTML = '<span class="material-symbols-outlined text-[19px]">check_circle</span> Assigned!';
+        setTimeout(closeModal, 600);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(18,26,52,0.05)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors text-primary font-semibold" data-path="activities" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-label-sm text-label-sm mt-0.5">Activities</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="sim" href="#"><span class="material-symbols-outlined text-[24px]">science</span><span class="font-label-sm text-label-sm mt-0.5">Sim</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="progress" href="#"><span class="material-symbols-outlined text-[24px]">insights</span><span class="font-label-sm text-label-sm mt-0.5">Progress</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">Profile</span></a></div></nav></body></html>

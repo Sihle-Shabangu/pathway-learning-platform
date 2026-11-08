@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><title>Hardware Troubleshooting Simulation - Pathway</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body{min-height:max(884px,100dvh);}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#dee1ff", "surface-tint": "#304fd8", "on-secondary": "#ffffff", "tertiary": "#633f00", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#643f00", "outline-variant": "#c4c5d7", "surface-dim": "#d1d9fb", "primary-fixed-dim": "#b9c3ff", "surface-container-low": "#f3f3ff", "surface-container": "#ebedff", "inverse-on-surface": "#eff0ff", "on-primary-fixed": "#001258", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#0433c1", "on-tertiary-container": "#ffd095", "on-background": "#121a34", "tertiary-fixed-dim": "#ffb957", "on-surface-variant": "#444654", "surface-container-high": "#e3e7ff", "tertiary-fixed": "#ffddb5", "surface-container-highest": "#dbe1ff", "error": "#ba1a1a", "inverse-surface": "#272f4a", "surface-variant": "#dbe1ff", "primary-container": "#2f4fd8", "background": "#faf8ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-primary-container": "#d0d6ff", "outline": "#747686", "secondary": "#006a64", "error-container": "#ffdad6", "tertiary-container": "#835400", "surface": "#faf8ff", "on-surface": "#121a34", "secondary-container": "#81f6eb", "secondary-fixed-dim": "#63d9cf", "on-secondary-fixed-variant": "#00504b", "surface-bright": "#faf8ff", "on-secondary-container": "#00716a", "on-secondary-fixed": "#00201e", "inverse-primary": "#b9c3ff", "secondary-fixed": "#81f6eb", "on-error": "#ffffff", "on-tertiary-fixed": "#2a1800", "primary": "#0333c0" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem" }, fontFamily: { "headline-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "code-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }], "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-[#0F1A2E] text-[#E2E8F0] font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-white"><header class="fixed top-0 w-full z-50 bg-[#0F1A2E]/90 backdrop-blur-xl shadow-[0_2px_12px_rgba(0,0,0,0.35)] pt-safe"><div class="h-14 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Exit Simulation" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#16233D] transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button><div class="flex items-center gap-space-xs min-w-0"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span><h1 class="font-headline-sm text-headline-sm text-white truncate leading-tight">Hardware Troubleshooting Simulation</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="px-2.5 py-1 rounded bg-[#16233D] border border-slate-700/60 font-code-md text-code-md text-sky-400 flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">timer</span><span>08:42</span></div><button aria-label="Simulation Help" class="w-11 h-11 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#16233D] transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">help_outline</span></button></div></div></header><main class="flex-1 w-full pt-14 pb-safe bg-[#0F1A2E] px-margin-mobile overflow-y-auto"><div class="flex flex-col w-full pb-24">
+<!-- Top Meta / Scenario Context Card -->
+<section class="w-full mb-space-sm pt-space-xs">
+<div class="bg-inverse-surface rounded-xl p-space-md shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">Step 2 of 4</span>
+<span class="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary text-on-secondary font-code-md text-code-md">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+<span id="header-score">75 pts</span>
+</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest/20 hover:bg-surface-container-highest/30 text-inverse-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save &amp; Exit</span>
+</button>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-inverse-on-surface tracking-tight">Diagnose Dead Workstation</span>
+<p class="font-body-sm text-body-sm text-outline-variant">Workstation powered off mid-render; zero fan spin and continuous amber flash.</p>
+</div>
+</div>
+</section>
+<!-- Interactive Visual Viewport: PC Chassis -->
+<section class="w-full mb-space-md">
+<div class="relative w-full rounded-xl bg-inverse-surface shadow-lg overflow-hidden p-space-sm">
+<div class="flex items-center justify-between px-space-xs mb-space-xs">
+<div class="flex items-center gap-1.5 font-code-md text-code-md text-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">developer_board</span>
+<span>CHASSIS TELEMETRY // ATX-MID</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm text-secondary-fixed font-semibold">STANDBY 5VSB</span>
+</div>
+</div>
+<!-- Chassis Schematic Frame -->
+<div class="relative w-full h-56 rounded-lg bg-[#0a1220] overflow-hidden flex items-center justify-center">
+<!-- SVG Isometric Graphic of Motherboard & Chassis Components -->
+<svg class="w-full h-full text-outline/30" fill="none" viewbox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="chassisGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#1e293b"></stop>
+<stop offset="100%" stop-color="#0f172a"></stop>
+</lineargradient>
+<lineargradient id="traceGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"></stop>
+<stop offset="50%" stop-color="#38bdf8" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1"></stop>
+</lineargradient>
+</defs>
+<!-- Outer Chassis Frame -->
+<rect fill="url(#chassisGrad)" height="196" rx="8" stroke="rgba(255,255,255,0.06)" width="310" x="15" y="12"></rect>
+<!-- Motherboard Tray -->
+<rect fill="#0f172a" height="176" rx="4" width="205" x="25" y="22"></rect>
+<path d="M 40 40 L 90 40 L 90 90 L 140 90" stroke="url(#traceGrad)" stroke-dasharray="3 3" stroke-width="1.5"></path>
+<path d="M 60 160 L 120 160 L 120 120 L 160 120" stroke="url(#traceGrad)" stroke-dasharray="2 2" stroke-width="1.5"></path>
+<!-- CPU Cooler & Socket -->
+<rect fill="#1e293b" height="62" rx="6" width="62" x="52" y="44"></rect>
+<circle cx="83" cy="75" fill="#0f172a" r="22" stroke="#334155" stroke-width="2"></circle>
+<path d="M83 60 L83 90 M68 75 L98 75" stroke="#475569" stroke-width="2"></path>
+<!-- RAM Slots -->
+<g id="ram-slots-layer">
+<rect fill="#334155" height="74" rx="2" width="8" x="126" y="38"></rect>
+<rect fill="#2563eb" height="74" rx="2" width="8" x="138" y="38"></rect>
+<rect fill="#334155" height="74" rx="2" width="8" x="150" y="38"></rect>
+<rect fill="#334155" height="74" rx="2" width="8" x="162" y="38"></rect>
+</g>
+<!-- PCIe GPU slot / VRM -->
+<rect fill="#334155" height="14" rx="2" width="138" x="42" y="128"></rect>
+<rect fill="#1e293b" height="10" rx="2" width="100" x="42" y="152"></rect>
+<!-- PSU Shroud Area -->
+<rect fill="#0b1120" height="176" rx="4" width="75" x="240" y="22"></rect>
+<rect fill="#1e293b" height="78" rx="4" stroke="#334155" stroke-width="1" width="63" x="246" y="112"></rect>
+<circle cx="277.5" cy="151" fill="#0f172a" r="18" stroke="#475569" stroke-dasharray="4 2" stroke-width="2"></circle>
+<!-- Power connector cable bundle -->
+<path d="M 246 130 C 220 130, 210 50, 175 50" fill="none" opacity="0.8" stroke="#f59e0b" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+<!-- Interactive Hotspots -->
+<!-- Hotspot 1: RAM Modules -->
+<button aria-label="Inspect RAM Slot 1" class="group absolute top-10 left-[40%] -translate-x-1/2 p-1.5 focus:outline-none" id="hotspot-ram" onclick="selectHotspot('ram')" type="button">
+<span class="relative flex h-7 w-7 items-center justify-center">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-primary-container text-on-primary items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[15px]">memory</span>
+</span>
+</span>
+<span class="absolute -bottom-5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface font-code-md text-code-md whitespace-nowrap shadow pointer-events-none">
+            RAM DIMM 1
+          </span>
+</button>
+<!-- Hotspot 2: Motherboard / VRM -->
+<button aria-label="Inspect Motherboard and VRMs" class="group absolute top-12 left-[18%] -translate-x-1/2 p-1.5 focus:outline-none" id="hotspot-mobo" onclick="selectHotspot('mobo')" type="button">
+<span class="relative flex h-7 w-7 items-center justify-center">
+<span class="relative inline-flex rounded-full h-6 w-6 bg-surface-container-highest/60 text-inverse-on-surface items-center justify-center shadow group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[15px]">grid_view</span>
+</span>
+</span>
+<span class="absolute -bottom-5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface font-code-md text-code-md whitespace-nowrap shadow pointer-events-none">
+            VRM / Socket
+          </span>
+</button>
+<!-- Hotspot 3: PSU 12V Main -->
+<button aria-label="Inspect Power Supply Unit" class="group absolute bottom-12 right-[12%] -translate-x-1/2 p-1.5 focus:outline-none" id="hotspot-psu" onclick="selectHotspot('psu')" type="button">
+<span class="relative flex h-7 w-7 items-center justify-center">
+<span class="animate-pulse absolute inline-flex h-full w-full rounded-full bg-secondary-fixed opacity-50"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-secondary text-on-secondary items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[15px]">bolt</span>
+</span>
+</span>
+<span class="absolute -bottom-5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded bg-inverse-surface/90 text-inverse-on-surface font-code-md text-code-md whitespace-nowrap shadow pointer-events-none">
+            PSU ATX 24P
+          </span>
+</button>
+<!-- Live Telemetry overlay chip inside canvas -->
+<div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-[#0b1120]/80 backdrop-blur-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary-fixed text-[13px]">tune</span>
+<span class="font-code-md text-code-md text-inverse-on-surface" id="telemetry-readout">Target: RAM Slot 1 selected</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Panel Tab Navigation Bar -->
+<section class="w-full mb-space-md">
+<div class="grid grid-cols-3 gap-1 bg-inverse-surface p-1 rounded-xl shadow-sm" role="tablist">
+<button aria-selected="false" class="py-2 px-1 text-center rounded-lg font-label-md text-label-md text-outline-variant hover:text-inverse-on-surface transition-colors" id="tab-symptoms" onclick="switchTab('symptoms')" role="tab" type="button">
+        Symptoms
+      </button>
+<button aria-selected="true" class="py-2 px-1 text-center rounded-lg font-label-md text-label-md bg-primary-container text-on-primary font-semibold shadow transition-all" id="tab-actions" onclick="switchTab('actions')" role="tab" type="button">
+        Actions
+      </button>
+<button aria-selected="false" class="py-2 px-1 text-center rounded-lg font-label-md text-label-md text-outline-variant hover:text-inverse-on-surface transition-colors flex items-center justify-center gap-1" id="tab-log" onclick="switchTab('log')" role="tab" type="button">
+<span>Findings Log</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+</button>
+</div>
+</section>
+<!-- Panel 1: Symptoms Content (Hidden by default) -->
+<div class="hidden flex-col gap-space-sm mb-space-lg" id="panel-symptoms">
+<div class="bg-inverse-surface rounded-xl p-space-md flex flex-col gap-space-sm shadow">
+<div class="flex items-center gap-2 text-inverse-on-surface font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">report_problem</span>
+<span>Initial Dispatch Notes</span>
+</div>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-outline-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[16px] mt-0.5">check_circle</span>
+<span>Power button triggers instant amber blink code on front I/O panel (Pattern 2-1).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[16px] mt-0.5">check_circle</span>
+<span>Zero spin on chassis rear exhaust fan and CPU tower radiator fan.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[16px] mt-0.5">check_circle</span>
+<span>No display telemetry passed to DisplayPort monitor (Signal Not Detected).</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Panel 2: Actions Content (Active Default) -->
+<div class="flex flex-col gap-space-sm mb-space-lg" id="panel-actions">
+<!-- Safety Category Card -->
+<div class="bg-inverse-surface rounded-xl p-space-md shadow flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">health_and_safety</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider font-semibold">Safety Protocol</span>
+<span class="font-body-md text-body-md text-inverse-on-surface font-medium truncate">ESD Strap Grounding</span>
+</div>
+</div>
+<div class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center gap-1 flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">done_all</span>
+<span>Verified ✓</span>
+</div>
+</div>
+<!-- Active Diagnostic Action: Primary Selected -->
+<div class="bg-inverse-surface rounded-xl p-space-md shadow cursor-pointer transition-all bg-surface-container-highest/15 ring-0" id="action-ram-card" onclick="chooseAction('ram')">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">Recommended</span>
+<span class="font-code-md text-code-md text-outline-variant">DIMM-01</span>
+</div>
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center" id="ram-radio">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<div class="flex flex-col gap-1 mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-inverse-on-surface">Swap known-good DDR4 RAM into Slot 1</span>
+<p class="font-body-sm text-body-sm text-outline-variant">Isolate memory failure by replacing current stick with certified test module from toolkit.</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2 font-code-md text-code-md text-secondary-fixed">
+<span class="material-symbols-outlined text-[15px]">history</span>
+<span>Time: ~2m | Est. Cost: +15 pts</span>
+</div>
+<button class="h-9 px-3.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center gap-1.5 shadow" type="button">
+<span>Active Focus</span>
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+</button>
+</div>
+</div>
+<!-- Secondary Diagnostic Action -->
+<div class="bg-inverse-surface rounded-xl p-space-md shadow cursor-pointer transition-all hover:bg-surface-container-highest/10" id="action-psu-card" onclick="chooseAction('psu')">
+<div class="flex items-start justify-between gap-space-sm mb-space-xs">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest/30 text-inverse-on-surface font-label-sm text-label-sm font-semibold">Diagnostic</span>
+<span class="font-code-md text-code-md text-outline-variant">ATX-12V</span>
+</div>
+<span class="w-5 h-5 rounded-full bg-surface-container-highest/40 flex items-center justify-center" id="psu-radio">
+</span>
+</div>
+<div class="flex flex-col gap-1 mb-space-sm">
+<span class="font-headline-sm text-headline-sm text-inverse-on-surface">Test PSU 12V Rail with Multimeter</span>
+<p class="font-body-sm text-body-sm text-outline-variant">Probe yellow pin wire to verify +12.0V DC tolerance (±5%) while jumping PS_ON to ground.</p>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2 font-code-md text-code-md text-outline-variant">
+<span class="material-symbols-outlined text-[15px]">electric_meter</span>
+<span>Time: ~4m | Risk: Low</span>
+</div>
+<button class="h-9 px-3.5 rounded-lg bg-surface-container-highest/20 hover:bg-surface-container-highest/30 text-inverse-on-surface font-label-md text-label-md font-medium flex items-center gap-1" type="button">
+<span>Select Test</span>
+</button>
+</div>
+</div>
+<!-- Locked Action -->
+<div class="bg-inverse-surface/60 rounded-xl p-space-md opacity-60 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-highest/20 text-outline-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>Prerequisites Unmet</span>
+</span>
+<span class="font-code-md text-code-md text-outline-variant">ROM-SPI</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-outline text-[18px]">lock</span>
+<span class="font-headline-sm text-headline-sm text-outline">Flash BIOS Firmware via USB Flashback</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline">Cannot flash firmware without stable standby auxiliary rail and verified POST initialization.</p>
+</div>
+</div>
+<!-- Panel 3: Findings Log Content (Hidden by default) -->
+<div class="hidden flex-col gap-space-sm mb-space-lg" id="panel-log">
+<div class="bg-inverse-surface rounded-xl p-space-md flex flex-col gap-space-sm shadow">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-inverse-on-surface">Telemetry Audit Trail</span>
+<span class="font-code-md text-code-md text-secondary-fixed">2 entries recorded</span>
+</div>
+<div class="flex flex-col gap-2 font-code-md text-code-md">
+<div class="p-space-sm rounded-lg bg-[#0b1120] text-outline-variant flex flex-col gap-1">
+<div class="flex items-center justify-between text-secondary-fixed font-semibold">
+<span>[00:01:14] INITIAL INSPECTION</span>
+<span>OK</span>
+</div>
+<span>Chassis opened. Grounding strap clamped to unpainted PSU casing chassis frame.</span>
+</div>
+<div class="p-space-sm rounded-lg bg-[#0b1120] text-outline-variant flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-tertiary-container font-semibold">
+<span>[00:03:40] STANDBY VOLTAGE</span>
+<span>5.04V</span>
+</div>
+<span>Purple +5VSB pin verified within nominal parameters. Main logic standby confirmed.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Performance & Action Bar -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-inverse-surface/95 backdrop-blur-md px-margin-mobile py-space-sm pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.4)]">
+<div class="w-full max-w-lg mx-auto flex items-center justify-between gap-space-md">
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline-variant uppercase tracking-wider">Session Score</span>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm font-code-md text-secondary-fixed" id="footer-score-val">75</span>
+<span class="font-body-sm text-body-sm text-outline-variant">/ 100</span>
+</div>
+</div>
+<button class="h-12 min-h-[48px] px-6 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg active:scale-95 transition-all flex-1 max-w-[240px]" id="perform-action-btn" onclick="performCurrentAction()" type="button">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+<span id="action-btn-text">Execute Swap</span>
+</button>
+</div>
+</aside>
+</div>
+<script>
+  let currentSelection = 'ram';
+  let currentScore = 75;
+
+  function switchTab(tabId) {
+    const tabs = ['symptoms', 'actions', 'log'];
+    tabs.forEach(id => {
+      const panel = document.getElementById('panel-' + id);
+      const tabBtn = document.getElementById('tab-' + id);
+      if (id === tabId) {
+        panel.classList.remove('hidden');
+        panel.classList.add('flex');
+        tabBtn.setAttribute('aria-selected', 'true');
+        tabBtn.className = 'py-2 px-1 text-center rounded-lg font-label-md text-label-md bg-primary-container text-on-primary font-semibold shadow transition-all';
+      } else {
+        panel.classList.remove('flex');
+        panel.classList.add('hidden');
+        tabBtn.setAttribute('aria-selected', 'false');
+        tabBtn.className = 'py-2 px-1 text-center rounded-lg font-label-md text-label-md text-outline-variant hover:text-inverse-on-surface transition-colors';
+      }
+    });
+  }
+
+  function selectHotspot(target) {
+    const telemetry = document.getElementById('telemetry-readout');
+    if (target === 'ram') {
+      telemetry.textContent = 'Target: RAM Slot 1 selected';
+      chooseAction('ram');
+    } else if (target === 'psu') {
+      telemetry.textContent = 'Target: ATX 24P / 12V Rail selected';
+      chooseAction('psu');
+    } else if (target === 'mobo') {
+      telemetry.textContent = 'Target: VRM Capacitor array inspected';
+    }
+  }
+
+  function chooseAction(action) {
+    currentSelection = action;
+    const ramCard = document.getElementById('action-ram-card');
+    const psuCard = document.getElementById('action-psu-card');
+    const ramRadio = document.getElementById('ram-radio');
+    const psuRadio = document.getElementById('psu-radio');
+    const btnText = document.getElementById('action-btn-text');
+
+    if (action === 'ram') {
+      ramCard.classList.add('bg-surface-container-highest/15');
+      psuCard.classList.remove('bg-surface-container-highest/15');
+      ramRadio.className = 'w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center';
+      ramRadio.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>';
+      psuRadio.className = 'w-5 h-5 rounded-full bg-surface-container-highest/40 flex items-center justify-center';
+      psuRadio.innerHTML = '';
+      btnText.textContent = 'Execute Swap';
+    } else if (action === 'psu') {
+      psuCard.classList.add('bg-surface-container-highest/15');
+      ramCard.classList.remove('bg-surface-container-highest/15');
+      psuRadio.className = 'w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center';
+      psuRadio.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>';
+      ramRadio.className = 'w-5 h-5 rounded-full bg-surface-container-highest/40 flex items-center justify-center';
+      ramRadio.innerHTML = '';
+      btnText.textContent = 'Probe Multimeter';
+    }
+  }
+
+  function performCurrentAction() {
+    const btn = document.getElementById('perform-action-btn');
+    btn.disabled = true;
+    btn.classList.add('opacity-75');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">sync</span><span>Testing...</span>';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.classList.remove('opacity-75');
+      btn.innerHTML = originalText;
+
+      if (currentSelection === 'ram' && currentScore < 90) {
+        currentScore += 15;
+        document.getElementById('header-score').textContent = currentScore + ' pts';
+        document.getElementById('footer-score-val').textContent = currentScore;
+        const telemetry = document.getElementById('telemetry-readout');
+        telemetry.textContent = 'Success: Workstation posted to UEFI!';
+        telemetry.classList.add('text-secondary-fixed');
+      }
+    }, 900);
+  }
+</script></main></body></html>

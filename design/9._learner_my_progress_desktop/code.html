@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#304fd8","error":"#ba1a1a","tertiary":"#633f00","tertiary-fixed":"#ffddb5","on-tertiary":"#ffffff","surface-container":"#ebedff","inverse-primary":"#b9c3ff","on-primary-fixed-variant":"#0433c1","on-surface":"#121a34","secondary-container":"#81f6eb","secondary-fixed-dim":"#63d9cf","on-background":"#121a34","outline-variant":"#c4c5d7","on-primary-fixed":"#001258","secondary-fixed":"#81f6eb","error-container":"#ffdad6","surface-bright":"#faf8ff","on-secondary-container":"#00716a","surface-container-lowest":"#ffffff","inverse-surface":"#272f4a","on-tertiary-container":"#ffd095","primary-fixed":"#dee1ff","surface-container-high":"#e3e7ff","primary-fixed-dim":"#b9c3ff","tertiary-container":"#835400","surface-container-low":"#f3f3ff","on-secondary":"#ffffff","surface-container-highest":"#dbe1ff","primary":"#0333c0","on-primary-container":"#d0d6ff","surface-dim":"#d1d9fb","surface-variant":"#dbe1ff","on-surface-variant":"#444654","secondary":"#006a64","outline":"#747686","tertiary-fixed-dim":"#ffb957","on-error-container":"#93000a","on-secondary-fixed-variant":"#00504b","on-error":"#ffffff","surface":"#faf8ff","on-tertiary-fixed":"#2a1800","on-primary":"#ffffff","background":"#faf8ff","primary-container":"#2f4fd8","on-secondary-fixed":"#00201e","inverse-on-surface":"#eff0ff","on-tertiary-fixed-variant":"#643f00"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"2rem","space-sm":"0.5rem","space-xl":"2rem","gutter-mobile":"1rem","space-md":"1rem","space-lg":"1.5rem","gutter":"1.5rem","space-xs":"0.25rem","margin-mobile":"1rem"},fontFamily:{"code-md":["JetBrains Mono"],"body-sm":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"headline-sm":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"body-md":["Inter"],"headline-xl-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"]},fontSize:{"code-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm border-b border-outline-variant/20"><img alt="Pathway Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrADqBDUxHPdSqZocTuBjcYiwEtUmk3z2onaxFyEIkbPHF2xTLqb9Lxl9bQ1E8q1iU4JIy0AdhfRYQY3hPcJaXWSCP8B7_FvSZVKVkEbBN9kCcyYcZVhTV2HXFz9z2jH6h5ijRzZ-UsCKQbqfzWRsbFwCTQA7_SGxCTtNzsu4zyablsN_R5Nb3i61Qv1DAejZ5Qip8CbM0rYa9aZb5xjo12u0yvnatoYPTQOGp_tdwt7"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Pathway</span></div><div class="p-space-sm pb-0"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Administrator</span></div><nav class="flex flex-col gap-space-xs px-space-sm pt-space-xs pb-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="admin-dashboard" href="#">Dashboard</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="admin-learners" href="#">Learners</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="admin-activities" href="#">Activities</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="admin-reports" href="#">Reports</a></nav><div class="p-space-sm pb-0 pt-0"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Learner Portal</span></div><nav class="flex flex-col gap-space-xs px-space-sm pt-space-xs pb-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-home" href="#">Home</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-activities" href="#">My Activities</a><a aria-current="page" class="flex items-center px-space-sm py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-label-md" data-path="learner-progress" href="#">My Progress</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-simulation" href="#">Simulation Bench</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-simulation-results" href="#">Simulation Results</a></nav></div><div class="p-space-sm border-t border-outline-variant/20 flex flex-col gap-space-xs"><div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><img alt="Ms. Naidoo" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtwuhDhNQ7q8eFrQuXgrbwwhm8EiXXLFP-at3IPpO3xsK49zg1SKXyoMmRTHJAeF7if1Unu20za9d6P9aMGqbv0fnE50A33_QN3chMmTvNCw1yTjEuGvCJudRNJLtS5hqJP2cQt5gNU1ZYnzuZ_xCWoLUCAVJFFgfaUyxJNgw7tdHRjTbJLH382KqQNrQVtzLyrLXfOTnXfvGFdLCfrDl6-jgxqBm-ukcJKoF80g8"/><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Ms. Naidoo</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Administrator</span></div><button class="text-on-surface-variant hover:text-on-surface p-space-xs flex items-center justify-center" title="User menu" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div><div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md flex items-center justify-center font-semibold text-[13px]">LM</div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Learato Molefe</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Enrolled Learner</span></div><button class="text-on-surface-variant hover:text-on-surface p-space-xs flex items-center justify-center" title="Switch profile" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span></button></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface-variant">Academic Hub</span><span class="text-outline-variant font-label-sm text-label-sm">/</span><span class="font-label-md text-label-md text-primary font-semibold">Console</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined text-outline absolute left-3 text-[18px]">search</span><input class="w-72 h-10 pl-9 pr-space-md rounded-lg bg-surface border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search simulation assets, learners..." type="text"/></div><div class="relative"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><button class="h-10 px-space-md rounded-lg bg-primary font-label-md text-label-md text-on-primary hover:bg-surface-tint active:bg-primary-container flex items-center gap-space-xs shadow-[0_1px_4px_rgba(3,51,192,0.2)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Session</span></button></div></header><main class="relative pt-16 w-full flex-1 bg-surface"><div class="flex flex-col w-full">
+<div class="p-margin flex flex-col gap-space-xl">
+<!-- PAGE HEADER -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-code-md text-code-md text-primary font-medium tracking-tight">STU-8821</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Learner Trajectory • Cohort 2025</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">My Learning Progress &amp; Practical Mastery</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Track your simulation performance trajectory, curriculum milestones, and practical competency growth.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container hover:text-primary transition-all flex items-center gap-space-xs shadow-sm font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Download Academic Transcript</span>
+</button>
+</div>
+</div>
+<!-- METRIC SUMMARY CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Curriculum Progress</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">3 / 5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Modules</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+</div>
+<div class="mt-space-md">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-outline">Overall Completion</span>
+<span class="font-code-md text-code-md text-primary font-semibold">60%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500" style="width: 60%"></div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Simulation Average</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">84.5%</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">trending_up</span>
+<span class="font-body-sm text-body-sm text-secondary font-medium">+3.2%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">vs cohort benchmark</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Lab Bench Time</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">18.5</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">hrs</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Interactive live telemetry logged</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Diagnostic Accuracy</span>
+<div class="flex items-baseline gap-space-xs mt-space-xs">
+<span class="font-headline-lg text-headline-lg text-on-surface font-semibold">88.2%</span>
+</div>
+</div>
+<div class="w-10 h-10 rounded-lg bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="mt-space-md flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Top Quartile</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">First-time triage</span>
+</div>
+</div>
+</div>
+<!-- CHART & COMPETENCY MATRIX SECTION -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<!-- Left Column: Simulation Trajectory Line Chart (8 of 12 cols = 2/3) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Simulation Mastery Trajectory</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Performance evolution across consecutive diagnostic simulation environments.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-primary rounded-full"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Score</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 border-b border-dashed border-error"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Benchmark (70%)</span>
+</div>
+</div>
+</div>
+<!-- SVG Line Chart Area -->
+<div class="relative w-full h-72 my-space-sm flex items-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 700 240">
+<defs>
+<lineargradient id="primaryGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2F4FD8" stop-opacity="0.18"></stop>
+<stop offset="100%" stop-color="#2F4FD8" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Gridlines -->
+<line stroke="#EBEDFF" stroke-width="1" x1="40" x2="680" y1="20" y2="20"></line>
+<text class="font-code-md text-[11px]" fill="#747686" text-anchor="end" x="32" y="24">100%</text>
+<line stroke="#EBEDFF" stroke-width="1" x1="40" x2="680" y1="65" y2="65"></line>
+<text class="font-code-md text-[11px]" fill="#747686" text-anchor="end" x="32" y="69">85%</text>
+<!-- 70% Institutional Benchmark line -->
+<line stroke="#BA1A1A" stroke-dasharray="4 4" stroke-opacity="0.75" stroke-width="1.5" x1="40" x2="680" y1="110" y2="110"></line>
+<text class="font-code-md text-[11px] font-semibold" fill="#BA1A1A" text-anchor="end" x="32" y="114">70%</text>
+<text class="font-label-sm text-[10px]" fill="#BA1A1A" text-anchor="end" x="680" y="104">70% Minimum Institutional Passing Benchmark</text>
+<line stroke="#EBEDFF" stroke-width="1" x1="40" x2="680" y1="155" y2="155"></line>
+<text class="font-code-md text-[11px]" fill="#747686" text-anchor="end" x="32" y="159">55%</text>
+<line stroke="#EBEDFF" stroke-width="1" x1="40" x2="680" y1="200" y2="200"></line>
+<text class="font-code-md text-[11px]" fill="#747686" text-anchor="end" x="32" y="204">40%</text>
+<!-- Shaded Area Under Curve (Sim 1 to 4) -->
+<!-- Scale: 100% = y:20, 40% = y:200. Rate = (200 - 20) / 60 = 3px per %. -->
+<!-- Sim 1 (78%): y = 200 - (38 * 3) = 86; x = 90 -->
+<!-- Sim 2 (82%): y = 200 - (42 * 3) = 74; x = 230 -->
+<!-- Sim 3 (91%): y = 200 - (51 * 3) = 47; x = 370 -->
+<!-- Sim 4 (86%): y = 200 - (46 * 3) = 62; x = 510 -->
+<!-- Sim 5 (Projected ~89%): y = 53; x = 640 -->
+<path d="M 90,86 L 230,74 L 370,47 L 510,62 L 510,200 L 90,200 Z" fill="url(#primaryGradient)"></path>
+<!-- Actual Trajectory Line -->
+<path d="M 90,86 L 230,74 L 370,47 L 510,62" fill="none" stroke="#2F4FD8" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Projected Segment to Sim 5 -->
+<path d="M 510,62 L 640,53" fill="none" stroke="#2F4FD8" stroke-dasharray="5 5" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Points on the graph -->
+<!-- Sim 1 -->
+<circle cx="90" cy="86" fill="#FFFFFF" r="5" stroke="#2F4FD8" stroke-width="3"></circle>
+<text class="font-code-md text-[12px] font-semibold" fill="#121A34" text-anchor="middle" x="90" y="74">78%</text>
+<!-- Sim 2 -->
+<circle cx="230" cy="74" fill="#FFFFFF" r="5" stroke="#2F4FD8" stroke-width="3"></circle>
+<text class="font-code-md text-[12px] font-semibold" fill="#121A34" text-anchor="middle" x="230" y="62">82%</text>
+<!-- Sim 3 -->
+<circle cx="370" cy="47" fill="#FFFFFF" r="5" stroke="#2F4FD8" stroke-width="3"></circle>
+<text class="font-code-md text-[12px] font-semibold" fill="#121A34" text-anchor="middle" x="370" y="35">91%</text>
+<!-- Sim 4 -->
+<circle cx="510" cy="62" fill="#FFFFFF" r="5" stroke="#2F4FD8" stroke-width="3"></circle>
+<text class="font-code-md text-[12px] font-semibold" fill="#121A34" text-anchor="middle" x="510" y="50">86%</text>
+<!-- Sim 5 Projected -->
+<circle cx="640" cy="53" fill="#FFFFFF" r="5" stroke="#747686" stroke-dasharray="2 2" stroke-width="2"></circle>
+<text class="font-code-md text-[11px]" fill="#747686" text-anchor="middle" x="640" y="41">Proj. ~89%</text>
+</svg>
+</div>
+<!-- X-Axis Labels -->
+<div class="grid grid-cols-5 text-center pt-space-xs">
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Sim 1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[110px]">Diagnostic Intro</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Sim 2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[110px]">RAM &amp; Bus</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Sim 3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[110px]">PSU &amp; Voltage</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-label-md text-label-md text-on-surface font-medium">Sim 4</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate max-w-[110px]">Dead Workstation</span>
+</div>
+<div class="flex flex-col items-center opacity-75">
+<span class="font-label-md text-label-md text-outline font-medium">Sim 5</span>
+<span class="font-body-sm text-body-sm text-outline truncate max-w-[110px]">POST Hex Analysis</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Curriculum Competency Matrix (4 of 12 cols = 1/3) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Skill Competencies</h2>
+<span class="material-symbols-outlined text-outline text-[20px]">psychology</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Validated domain capabilities based on continuous telemetry evaluation.</p>
+<div class="flex flex-col gap-space-md mt-space-md">
+<!-- Skill 1 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Safety Protocols &amp; ESD</span>
+<span class="font-code-md text-code-md text-secondary font-semibold">95%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Diagnostic Reasoning</span>
+<span class="font-code-md text-code-md text-primary font-semibold">88%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Component Identification</span>
+<span class="font-code-md text-code-md text-primary font-semibold">82%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Procedural Precision</span>
+<span class="font-code-md text-code-md text-tertiary-container font-semibold">79%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 79%"></div>
+</div>
+</div>
+<!-- Skill 5 -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Telemetry Interpretation</span>
+<span class="font-code-md text-code-md text-primary font-semibold">84%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 84%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-space-sm mt-space-md rounded-lg bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">military_tech</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Industry Readiness Tier</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Qualified for Level 2 Field Certification</span>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPLETION HISTORY & SIMULATION ARCHIVE TABLE -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Bar -->
+<div class="p-space-lg pb-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Completed Activities &amp; Simulation Archive</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comprehensive ledger of attempts, formal assessments, and telemetry results.</p>
+</div>
+<!-- Filter Dropdown & Controls -->
+<div class="flex items-center gap-space-sm">
+<div class="relative inline-flex items-center">
+<span class="material-symbols-outlined text-outline absolute left-3 text-[18px]">filter_list</span>
+<select class="h-9 pl-9 pr-8 rounded-lg bg-surface font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option>All Terms</option>
+<option selected="">Cohort 2025</option>
+<option>Prior Trimester</option>
+</select>
+<span class="material-symbols-outlined text-outline absolute right-2 text-[16px] pointer-events-none">expand_more</span>
+</div>
+<div class="relative inline-flex items-center">
+<select class="h-9 px-space-sm rounded-lg bg-surface font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary appearance-none cursor-pointer pr-7">
+<option>All Modules</option>
+<option>Hardware Diagnostics</option>
+<option>Network Routing</option>
+<option>Cyber Infrastructure</option>
+</select>
+<span class="material-symbols-outlined text-outline absolute right-2 text-[16px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Table Content -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-outline uppercase font-label-sm text-label-sm tracking-wider">
+<th class="py-space-sm px-space-md" scope="col">Date Completed</th>
+<th class="py-space-sm px-space-md" scope="col">Activity Name</th>
+<th class="py-space-sm px-space-md" scope="col">Type</th>
+<th class="py-space-sm px-space-md" scope="col">Score</th>
+<th class="py-space-sm px-space-md" scope="col">Status</th>
+<th class="py-space-sm px-space-md text-right" scope="col">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Row 1 -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">
+                Feb 18, 2025
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Hardware Troubleshooting: Dead Workstation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Module 4 • Advanced Power &amp; Motherboard Diagnostics</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+                  Simulation
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-code-md text-code-md text-on-surface font-semibold">
+                86%
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="font-label-md text-label-md text-primary hover:text-surface-tint font-medium flex items-center justify-end gap-1 group" href="#">
+<span>Review Attempt</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">
+                Feb 12, 2025
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Network Configuration &amp; Subnetting Lab</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Module 3 • IPv4 Subnet Allocations &amp; VLAN Verification</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                  Guided Lab
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-code-md text-code-md text-on-surface font-semibold">
+                92%
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="font-label-md text-label-md text-primary hover:text-surface-tint font-medium flex items-center justify-end gap-1 group" href="#">
+<span>Review Attempt</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">
+                Jan 28, 2025
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Cyber Hygiene &amp; Credential Safeguarding</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Module 2 • Threat Vector Analysis &amp; Zero Trust Access</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                  Case Study
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-code-md text-code-md text-on-surface font-semibold">
+                88%
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="font-label-md text-label-md text-primary hover:text-surface-tint font-medium flex items-center justify-end gap-1 group" href="#">
+<span>Review Attempt</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface whitespace-nowrap">
+                Jan 15, 2025
+              </td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">Power Supply Voltage Rail &amp; Multimeter</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Module 1 • Bench Testing +12V, +5V &amp; +3.3V Rails</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                  Guided Lab
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-code-md text-code-md text-on-surface font-semibold">
+                94%
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container/40 text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="font-label-md text-label-md text-primary hover:text-surface-tint font-medium flex items-center justify-end gap-1 group" href="#">
+<span>Review Attempt</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</td>
+</tr>
+<!-- Row 5 (In Progress) -->
+<tr class="bg-surface-container-low/30 hover:bg-surface transition-colors">
+<td class="py-space-md px-space-md font-body-sm text-body-sm text-on-surface whitespace-nowrap flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span>Active Session</span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">POST Code Hex Diagnostics</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Module 5 • BIOS/UEFI Error Code Sequence Verification</span>
+</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm">
+                  Simulation
+                </span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-code-md text-code-md text-outline">
+                --
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                  In Progress
+                </span>
+</td>
+<td class="py-space-md px-space-md text-right whitespace-nowrap">
+<a class="inline-flex items-center gap-1 px-3 py-1 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-surface-tint transition-colors" href="#">
+<span class="material-symbols-outlined text-[15px]">play_arrow</span>
+<span>Resume</span>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Summary Footer -->
+<div class="p-space-md bg-surface-container-low/40 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 5 of 5 simulation records</span>
+<div class="flex items-center gap-space-xs">
+<button class="h-8 px-space-sm rounded bg-surface-container-lowest text-on-surface-variant hover:text-on-surface disabled:opacity-50 text-body-sm font-body-sm shadow-sm" disabled="">Previous</button>
+<button class="h-8 px-space-sm rounded bg-primary text-on-primary text-body-sm font-body-sm">1</button>
+<button class="h-8 px-space-sm rounded bg-surface-container-lowest text-on-surface-variant hover:text-on-surface disabled:opacity-50 text-body-sm font-body-sm shadow-sm" disabled="">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Ensure the sidebar navigation highlights 'My Progress'
+  document.addEventListener('DOMContentLoaded', () => {
+    const progressLink = document.querySelector('aside [data-path="learner-progress"]');
+    if (progressLink) {
+      // Remove default styling and activate learner-progress
+      document.querySelectorAll('aside nav a').forEach(a => {
+        a.classList.remove('bg-primary-container', 'text-on-primary', 'font-label-md');
+        a.classList.add('text-on-surface-variant');
+      });
+      progressLink.classList.remove('text-on-surface-variant');
+      progressLink.classList.add('bg-primary-container', 'text-on-primary', 'font-label-md');
+    }
+  });
+</script></main></div></body></html>

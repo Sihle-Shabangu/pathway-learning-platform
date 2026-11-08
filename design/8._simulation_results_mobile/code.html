@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><title>Simulation Results - Pathway</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body{min-height:max(884px,100dvh);}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#dee1ff", "surface-tint": "#304fd8", "on-secondary": "#ffffff", "tertiary": "#633f00", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#643f00", "outline-variant": "#c4c5d7", "surface-dim": "#d1d9fb", "primary-fixed-dim": "#b9c3ff", "surface-container-low": "#f3f3ff", "surface-container": "#ebedff", "inverse-on-surface": "#eff0ff", "on-primary-fixed": "#001258", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#0433c1", "on-tertiary-container": "#ffd095", "on-background": "#121a34", "tertiary-fixed-dim": "#ffb957", "on-surface-variant": "#444654", "surface-container-high": "#e3e7ff", "tertiary-fixed": "#ffddb5", "surface-container-highest": "#dbe1ff", "error": "#ba1a1a", "inverse-surface": "#272f4a", "surface-variant": "#dbe1ff", "primary-container": "#2f4fd8", "background": "#faf8ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-primary-container": "#d0d6ff", "outline": "#747686", "secondary": "#006a64", "error-container": "#ffdad6", "tertiary-container": "#835400", "surface": "#faf8ff", "on-surface": "#121a34", "secondary-container": "#81f6eb", "secondary-fixed-dim": "#63d9cf", "on-secondary-fixed-variant": "#00504b", "surface-bright": "#faf8ff", "on-secondary-container": "#00716a", "on-secondary-fixed": "#00201e", "inverse-primary": "#b9c3ff", "secondary-fixed": "#81f6eb", "on-error": "#ffffff", "on-tertiary-fixed": "#2a1800", "primary": "#0333c0" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem" }, fontFamily: { "headline-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "code-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }], "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-[#0F1A2E] text-[#E2E8F0] font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-white"><header class="fixed top-0 w-full z-50 bg-[#0F1A2E]/90 backdrop-blur-xl shadow-[0_2px_12px_rgba(0,0,0,0.35)] pt-safe"><div class="h-14 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Exit Simulation" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#16233D] transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">close</span></button><div class="flex items-center gap-space-xs min-w-0"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0"></span><h1 class="font-headline-sm text-headline-sm text-white truncate leading-tight">Simulation Results</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div class="px-2.5 py-1 rounded bg-[#16233D] border border-slate-700/60 font-code-md text-code-md text-sky-400 flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">timer</span><span>08:42</span></div><button aria-label="Simulation Help" class="w-11 h-11 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-[#16233D] transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">help_outline</span></button></div></div></header><main class="flex-1 w-full pt-14 pb-safe bg-[#0F1A2E] px-margin-mobile overflow-y-auto"><div class="flex flex-col w-full pb-28">
+<div class="flex flex-col gap-space-md py-space-sm">
+<div class="rounded-xl bg-inverse-surface text-inverse-on-surface p-space-lg flex flex-col items-center shadow-lg relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-40 h-40 bg-surface-tint/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute -left-10 -bottom-10 w-36 h-36 bg-secondary/15 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative w-44 h-44 flex items-center justify-center my-space-xs">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 120 120">
+<circle class="stroke-inverse-surface/40" cx="60" cy="60" fill="none" r="50" stroke-dasharray="314.16" stroke-dashoffset="0" stroke-width="8"></circle>
+<circle class="stroke-surface-tint" cx="60" cy="60" fill="none" r="50" stroke-dasharray="314.16" stroke-dashoffset="56.55" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<div class="flex items-baseline justify-center">
+<span class="font-headline-xl-mobile text-headline-xl-mobile text-white tracking-tight">82</span>
+<span class="font-label-md text-label-md text-slate-300 ml-1">/ 100</span>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 mt-0.5 rounded-full bg-secondary text-white font-label-sm text-label-sm uppercase tracking-wider">
+            Passed
+          </span>
+</div>
+</div>
+<div class="w-full flex flex-col items-center gap-space-xs mt-space-xs text-center">
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#1e2f50] text-emerald-300 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md font-medium text-emerald-200">Fault Resolved: Faulty RAM Module</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-400 font-code-md text-code-md mt-1">
+<span class="material-symbols-outlined text-[16px] text-slate-400">schedule</span>
+<span>Elapsed Time: 18m 42s</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-slate-400 px-space-xs uppercase tracking-wider">Competency Metrics</span>
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="bg-inverse-surface p-space-sm rounded-lg flex flex-col items-center justify-center text-center shadow-sm">
+<span class="font-label-sm text-label-sm text-slate-400 mb-1">Safety</span>
+<span class="font-headline-sm text-headline-sm text-emerald-400">100%</span>
+<div class="w-full bg-[#1e2f50] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-emerald-400 h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<div class="bg-inverse-surface p-space-sm rounded-lg flex flex-col items-center justify-center text-center shadow-sm">
+<span class="font-label-sm text-label-sm text-slate-400 mb-1">Reasoning</span>
+<span class="font-headline-sm text-headline-sm text-sky-400">85%</span>
+<div class="w-full bg-[#1e2f50] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-sky-400 h-full rounded-full" style="width: 85%;"></div>
+</div>
+</div>
+<div class="bg-inverse-surface p-space-sm rounded-lg flex flex-col items-center justify-center text-center shadow-sm">
+<span class="font-label-sm text-label-sm text-slate-400 mb-1">Efficiency</span>
+<span class="font-headline-sm text-headline-sm text-amber-400">65%</span>
+<div class="w-full bg-[#1e2f50] h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-amber-400 h-full rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm mt-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-headline-sm text-headline-sm text-white">Decision Timeline</span>
+<span class="font-code-md text-code-md text-slate-400">4 Events Recorded</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<div class="bg-inverse-surface rounded-xl p-space-md shadow-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-emerald-950/80 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-white font-semibold">Step 1: ESD Grounding</span>
+<span class="font-code-md text-code-md text-emerald-400 font-semibold flex-shrink-0">+15 pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-1">Anti-static wrist strap securely attached before chassis contact.</p>
+</div>
+</div>
+<div class="bg-inverse-surface rounded-xl p-space-md shadow-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-emerald-950/80 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">hearing</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-white font-semibold">Step 2: Beep Code Analysis</span>
+<span class="font-code-md text-code-md text-emerald-400 font-semibold flex-shrink-0">+10 pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-1">Accurately mapped 3 long beeps to continuous memory parity failure.</p>
+</div>
+</div>
+<div class="bg-[#242135] rounded-xl p-space-md shadow-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-amber-950 text-amber-300 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-amber-200 font-semibold">Step 3: Reseated without Slot Swap</span>
+<span class="font-code-md text-code-md text-amber-300 font-semibold flex-shrink-0">-15 pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-1">Re-inserted suspected module into identical slot without isolation or channel verification.</p>
+<div class="mt-2 p-2 rounded bg-amber-950/40 text-amber-200 font-body-sm text-body-sm flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-amber-400 flex-shrink-0 mt-0.5">info</span>
+<span>Efficiency deduction: DIMM channel isolate was skipped.</span>
+</div>
+</div>
+</div>
+<div class="bg-inverse-surface rounded-xl p-space-md shadow-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-emerald-950/80 text-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">memory</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-md text-label-md text-white font-semibold">Step 4: Swapped Known-Good RAM</span>
+<span class="font-code-md text-code-md text-emerald-400 font-semibold flex-shrink-0">+25 pts</span>
+</div>
+<p class="font-body-sm text-body-sm text-slate-300 mt-1">Inserted certified test DIMM; POST handshake achieved successfully.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-inverse-surface rounded-xl overflow-hidden shadow-sm mt-space-xs">
+<button class="w-full p-space-md flex items-center justify-between text-left hover:bg-[#1f2b45] transition-colors" id="expert-accordion-btn" type="button">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-surface-tint text-[22px]">psychology</span>
+<span class="font-headline-sm text-headline-sm text-white">What an expert would have done</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 transition-transform duration-200 text-[22px]" id="expert-accordion-icon">expand_more</span>
+</button>
+<div class="hidden px-space-md pb-space-md text-slate-300 font-body-sm text-body-sm flex flex-col gap-space-sm" id="expert-accordion-content">
+<div class="p-space-sm rounded-lg bg-[#0F1A2E] text-slate-300">
+<p class="leading-relaxed">
+            A Senior Hardware Specialist isolates the fault in three surgical steps:
+          </p>
+<ol class="list-decimal list-inside space-y-1.5 mt-2 text-slate-300">
+<li>Verify ESD precautions and record visual debug LEDs.</li>
+<li>Directly execute a single-stick cross-slot swap in Channel A2 to isolate whether the failure stems from the trace path or module IC.</li>
+<li>Substitute with validated reference memory instantly, bypassing the redundant original-socket reseat to save 6 minutes of diagnostic runtime.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 p-margin-mobile bg-[#0F1A2E]/95 backdrop-blur-md shadow-2xl flex flex-col gap-2 z-40">
+<button class="w-full h-12 rounded-lg bg-surface-tint hover:bg-primary active:bg-primary-container text-white font-headline-sm text-headline-sm flex items-center justify-center gap-2 transition-colors shadow-md" type="button">
+<span>Back to Dashboard</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-11 rounded-lg bg-transparent text-slate-300 hover:text-white hover:bg-inverse-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+<span>View My Progress</span>
+</button>
+</div>
+</div>
+<script>
+  (function () {
+    const btn = document.getElementById('expert-accordion-btn');
+    const content = document.getElementById('expert-accordion-content');
+    const icon = document.getElementById('expert-accordion-icon');
+
+    if (btn && content && icon) {
+      btn.addEventListener('click', function () {
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+          content.classList.remove('hidden');
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          content.classList.add('hidden');
+          icon.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+  })();
+</script></main></body></html>

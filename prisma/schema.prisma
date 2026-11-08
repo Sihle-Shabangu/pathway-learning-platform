@@ -1,0 +1,112 @@
+// Prisma 7: connection URLs live in prisma.config.ts (CLI) and src/server/db.ts (runtime adapter).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  LEARNER
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum ActivityType {
+  SIMULATION
+}
+
+enum AssignmentStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+model User {
+  id           String     @id @default(cuid())
+  name         String
+  email        String     @unique
+  passwordHash String
+  role         Role       @default(LEARNER)
+  status       UserStatus @default(ACTIVE)
+  cohort       String?
+  lastActiveAt DateTime?
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  activitiesCreated Activity[]   @relation("ActivityCreatedBy")
+  assignments       Assignment[]
+  auditLogs         AuditLog[]
+
+  @@index([role, status])
+  @@index([cohort])
+}
+
+model Activity {
+  id               String       @id @default(cuid())
+  title            String
+  description      String
+  type             ActivityType @default(SIMULATION)
+  scenarioKey      String
+  estimatedMinutes Int
+  createdById      String
+  createdAt        DateTime     @default(now())
+
+  createdBy   User         @relation("ActivityCreatedBy", fields: [createdById], references: [id])
+  assignments Assignment[]
+}
+
+model Assignment {
+  id          String           @id @default(cuid())
+  activityId  String
+  learnerId   String
+  dueDate     DateTime?
+  status      AssignmentStatus @default(NOT_STARTED)
+  assignedAt  DateTime         @default(now())
+  completedAt DateTime?
+
+  activity Activity            @relation(fields: [activityId], references: [id])
+  learner  User                @relation(fields: [learnerId], references: [id])
+  attempts SimulationAttempt[]
+
+  @@unique([activityId, learnerId])
+  @@index([learnerId])
+  @@index([status])
+}
+
+model SimulationAttempt {
+  id           String    @id @default(cuid())
+  assignmentId String
+  scenarioKey  String
+  seed         Int
+  state        Json
+  score        Int       @default(100)
+  startedAt    DateTime  @default(now())
+  completedAt  DateTime?
+
+  assignment Assignment @relation(fields: [assignmentId], references: [id])
+
+  @@index([assignmentId])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String
+  action     String
+  entityType String
+  entityId   String
+  metadata   Json     @default("{}")
+  createdAt  DateTime @default(now())
+
+  actor User @relation(fields: [actorId], references: [id])
+
+  @@index([createdAt])
+  @@index([actorId])
+}

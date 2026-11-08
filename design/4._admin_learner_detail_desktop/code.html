@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#dee1ff","surface-tint":"#304fd8","on-secondary":"#ffffff","tertiary":"#633f00","surface-container-lowest":"#ffffff","on-tertiary-fixed-variant":"#643f00","outline-variant":"#c4c5d7","surface-dim":"#d1d9fb","primary-fixed-dim":"#b9c3ff","surface-container-low":"#f3f3ff","surface-container":"#ebedff","inverse-on-surface":"#eff0ff","on-primary-fixed":"#001258","on-tertiary":"#ffffff","on-primary-fixed-variant":"#0433c1","on-tertiary-container":"#ffd095","on-background":"#121a34","tertiary-fixed-dim":"#ffb957","on-surface-variant":"#444654","surface-container-high":"#e3e7ff","tertiary-fixed":"#ffddb5","surface-container-highest":"#dbe1ff","error":"#ba1a1a","inverse-surface":"#272f4a","surface-variant":"#dbe1ff","primary-container":"#2f4fd8","background":"#faf8ff","on-error-container":"#93000a","on-primary":"#ffffff","on-primary-container":"#d0d6ff","outline":"#747686","secondary":"#006a64","error-container":"#ffdad6","tertiary-container":"#835400","surface":"#faf8ff","on-surface":"#121a34","secondary-container":"#81f6eb","secondary-fixed-dim":"#63d9cf","on-secondary-fixed-variant":"#00504b","surface-bright":"#faf8ff","on-secondary-container":"#00716a","on-secondary-fixed":"#00201e","inverse-primary":"#b9c3ff","secondary-fixed":"#81f6eb","on-error":"#ffffff","on-tertiary-fixed":"#2a1800","primary":"#0333c0"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","margin":"2rem","gutter":"1.5rem","space-md":"1rem","margin-mobile":"1rem","space-xl":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-mobile":"1rem"},fontFamily:{"headline-lg":["Inter"],"label-md":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"code-md":["JetBrains Mono"],"headline-sm":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"label-sm":["Inter"]},fontSize:{"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"600"}],"code-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"22px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm border-b border-outline-variant/20"><img alt="Pathway Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrADqBDUxHPdSqZocTuBjcYiwEtUmk3z2onaxFyEIkbPHF2xTLqb9Lxl9bQ1E8q1iU4JIy0AdhfRYQY3hPcJaXWSCP8B7_FvSZVKVkEbBN9kCcyYcZVhTV2HXFz9z2jH6h5ijRzZ-UsCKQbqfzWRsbFwCTQA7_SGxCTtNzsu4zyablsN_R5Nb3i61Qv1DAejZ5Qip8CbM0rYa9aZb5xjo12u0yvnatoYPTQOGp_tdwt7"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Pathway</span></div><nav class="flex flex-col gap-space-xs p-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learners" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Learners</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="activities" href="#"><span class="material-symbols-outlined text-[20px]">local_library</span><span>Activities</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px]">insert_chart</span><span>Reports</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="simulation" href="#"><span class="material-symbols-outlined text-[20px]">memory</span><span>Simulation</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="my-progress" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>My Progress</span></a></nav></div><div class="p-space-sm border-t border-outline-variant/20"><div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtwuhDhNQ7q8eFrQuXgrbwwhm8EiXXLFP-at3IPpO3xsK49zg1SKXyoMmRTHJAeF7if1Unu20za9d6P9aMGqbv0fnE50A33_QN3chMmTvNCw1yTjEuGvCJudRNJLtS5hqJP2cQt5gNU1ZYnzuZ_xCWoLUCAVJFFgfaUyxJNgw7tdHRjTbJLH382KqQNrQVtzLyrLXfOTnXfvGFdLCfrDl6-jgxqBm-ukcJKoF80g8"/><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Ms. Naidoo</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Administrator</span></div><button class="text-on-surface-variant hover:text-on-surface p-space-xs flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface-variant">Academic Hub</span><span class="text-outline-variant font-label-sm text-label-sm">/</span><span class="font-label-md text-label-md text-primary font-semibold">Console</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined text-outline absolute left-3 text-[18px]">search</span><input class="w-72 h-10 pl-9 pr-space-md rounded-lg bg-surface border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search simulation assets, learners..." type="text"/></div><div class="relative"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><button class="h-10 px-space-md rounded-lg bg-primary font-label-md text-label-md text-on-primary hover:bg-surface-tint active:bg-primary-container flex items-center gap-space-xs shadow-[0_1px_4px_rgba(3,51,192,0.2)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Session</span></button></div></header><main class="relative pt-16 w-full flex-1 bg-surface"><div class="flex flex-col w-full">
+<div class="p-margin flex flex-col gap-space-xl max-w-7xl mx-auto w-full">
+<!-- Top Breadcrumbs & Operational Status Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<nav class="flex items-center gap-space-xs text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>Learners</span>
+</a>
+<span class="text-outline-variant font-semibold">/</span>
+<span class="text-on-surface font-semibold tracking-tight">Lerato Khumalo (STU-8821)</span>
+</nav>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface font-code-md text-code-md">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          Telemetry Synced: 2 mins ago
+        </span>
+</div>
+</div>
+<!-- Learner Primary Header Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col xl:flex-row justify-between items-start xl:items-center gap-space-lg">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-lg">
+<div class="relative">
+<img class="w-24 h-24 rounded-xl object-cover shadow-sm bg-surface-container" data-alt="Photorealistic portrait of a young female engineering student named Lerato Khumalo, wearing safety goggles casually over forehead in an advanced technology hardware laboratory. Soft natural key lighting, sharp focus, serene and confident academic demeanor, subtle blue laboratory lighting backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBEX1e_VvsjAzVS10423oDKDm-VxxXm1BYQOV5yl9a1X9tpG1fONOcJkWgMklQNa0wfOx13rE5PHMptTLjXjcW5y8Lps6sNPBHz4dr9hAEcJWo2Q65Pr639l8FvbT3HAJjWOmZQ0gZ0Q52SMW7GU8ynG_uNKdRKhDBvArSae67aVEDmfDm79t_C8jaR50eDfObo-9cM4HQOd_lqAtrLJsIbRzfeoSiu8jtQsgPsyw"/>
+<span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary"></span>
+</span>
+</div>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Lerato Khumalo</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Active
+            </span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-code-md text-label-sm">STU-8821</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">mail</span>
+              l.khumalo@nudle-academy.ac.za
+            </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">school</span>
+              Cohort 2025 - Section A
+            </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span>
+              Enrolled Jan 14, 2025
+            </span>
+</div>
+</div>
+</div>
+<!-- Action Button Controls -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-space-sm w-full xl:w-auto">
+<button class="h-10 px-4 rounded-lg bg-surface-container-low text-primary hover:bg-surface-container font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit Learner</span>
+</button>
+<button class="h-10 px-4 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Report (PDF/CSV)</span>
+</button>
+<button class="h-10 px-4 rounded-lg bg-error/10 text-error hover:bg-error hover:text-on-error font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">person_off</span>
+<span>Deactivate Account</span>
+</button>
+</div>
+</section>
+<!-- Metrics Summary Cluster -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Metric 1: Completed Modules -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Completed Modules</span>
+<div class="w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">3 / 4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">units required</span>
+</div>
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-secondary transition-all duration-500" style="width: 75%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium">75% overall curriculum progress</span>
+</div>
+</div>
+<!-- Metric 2: Average Score -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Average Score</span>
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">84.5%</span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+            +6.2%
+          </span>
+</div>
+<div class="mt-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cohort average baseline: <span class="text-on-surface font-code-md">78.3%</span></span>
+</div>
+</div>
+<!-- Metric 3: Time Spent -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Time Spent</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/10 flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+</div>
+<div class="mt-4 flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-on-surface">18h 45m</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">interactive time</span>
+</div>
+<div class="mt-3">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Average session duration: <span class="text-on-surface font-semibold">42 mins</span> across 14 logins</span>
+</div>
+</div>
+</section>
+<!-- Performance Telemetry & Competency Breakdown Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Performance Over Time Curve (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Simulation Score Trajectory</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chronological mastery score progression across official simulator attempts</p>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-primary/10 px-2.5 py-1 rounded-full font-medium">Pass Threshold: 70%</span>
+</div>
+<!-- Inline SVG Performance Chart -->
+<div class="w-full mt-4 h-56 relative flex flex-col justify-end">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 500 180">
+<!-- Grid Lines -->
+<line opacity="0.35" stroke="#c4c5d7" stroke-dasharray="3 3" x1="0" x2="500" y1="36" y2="36"></line>
+<line opacity="0.35" stroke="#c4c5d7" stroke-dasharray="3 3" x1="0" x2="500" y1="72" y2="72"></line>
+<line opacity="0.5" stroke="#ba1a1a" stroke-dasharray="4 4" stroke-width="1.5" x1="0" x2="500" y1="108" y2="108"></line>
+<text class="font-code-md text-[10px] font-semibold" fill="#ba1a1a" x="4" y="104">70% Minimum Pass Threshold</text>
+<line opacity="0.35" stroke="#c4c5d7" stroke-dasharray="3 3" x1="0" x2="500" y1="144" y2="144"></line>
+<!-- Area Fill Gradient -->
+<defs>
+<lineargradient id="scoreAreaGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#0333c0" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#0333c0" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Curve Coordinates:
+                 Sim 1 (78%): x=40, y=180 - (180 * 0.78) = 39.6
+                 Sim 2 (82%): x=180, y=180 - (180 * 0.82) = 32.4
+                 Sim 3 (91%): x=320, y=180 - (180 * 0.91) = 16.2
+                 Sim 4 (86%): x=460, y=180 - (180 * 0.86) = 25.2
+            -->
+<polygon fill="url(#scoreAreaGradient)" points="40,39.6 180,32.4 320,16.2 460,25.2 460,160 40,160"></polygon>
+<polyline fill="none" points="40,39.6 180,32.4 320,16.2 460,25.2" stroke="#0333c0" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></polyline>
+<!-- Node Points & Values -->
+<!-- Sim 1 -->
+<circle cx="40" cy="39.6" fill="#0333c0" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+<text class="font-code-md text-[11px] font-semibold" fill="#121a34" text-anchor="middle" x="40" y="28">78%</text>
+<!-- Sim 2 -->
+<circle cx="180" cy="32.4" fill="#0333c0" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+<text class="font-code-md text-[11px] font-semibold" fill="#121a34" text-anchor="middle" x="180" y="21">82%</text>
+<!-- Sim 3 -->
+<circle cx="320" cy="16.2" fill="#006a64" r="5" stroke="#ffffff" stroke-width="2"></circle>
+<text class="font-code-md text-[11px] font-semibold" fill="#006a64" text-anchor="middle" x="320" y="9">91%</text>
+<!-- Sim 4 -->
+<circle cx="460" cy="25.2" fill="#0333c0" r="4.5" stroke="#ffffff" stroke-width="2"></circle>
+<text class="font-code-md text-[11px] font-semibold" fill="#121a34" text-anchor="middle" x="460" y="15">86%</text>
+</svg>
+</div>
+<div class="grid grid-cols-4 pt-2 text-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Sim 1 (Diagnostic Intro)</span>
+<span>Sim 2 (RAM/Bus Analysis)</span>
+<span>Sim 3 (PSU Diagnostics)</span>
+<span class="font-semibold text-primary">Sim 4 (Dead Workstation)</span>
+</div>
+</div>
+<!-- Key Competency Radar/Bar Indicators (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Core Competency Matrix</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-code-md">Evaluation Phase 2</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Standardized skill metrics weighted across all completed practical runs</p>
+</div>
+<div class="flex flex-col gap-space-md my-4">
+<!-- 1. Diagnostic Reasoning -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">psychology</span>
+                Diagnostic Reasoning
+              </span>
+<span class="font-code-md font-semibold text-on-surface">88%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 88%;"></div>
+</div>
+</div>
+<!-- 2. Safety Protocols -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">shield</span>
+                Safety Protocols &amp; ESD
+              </span>
+<span class="font-code-md font-semibold text-secondary">95%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-secondary" style="width: 95%;"></div>
+</div>
+</div>
+<!-- 3. Component Identification -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">memory</span>
+                Component Identification
+              </span>
+<span class="font-code-md font-semibold text-on-surface">82%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-primary" style="width: 82%;"></div>
+</div>
+</div>
+<!-- 4. Procedural Precision -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">tune</span>
+                Procedural Precision
+              </span>
+<span class="font-code-md font-semibold text-on-surface">79%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full rounded-full bg-tertiary-container" style="width: 79%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container text-body-sm font-body-sm text-on-surface-variant flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">verified</span>
+<span>Safety protocols rank in the top 5th percentile of the active engineering cohort.</span>
+</div>
+</div>
+</section>
+<!-- Assigned Activities Table with Interactive Expandable Row -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Curriculum Activities &amp; Practical Labs</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live telemetry logs, attempts breakdown, and submission evaluations</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Filter by status:</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">All (4)</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm cursor-pointer">Completed (2)</span>
+</div>
+</div>
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container font-label-md text-label-md text-on-surface-variant">
+<th class="py-3 px-space-md">Activity Name</th>
+<th class="py-3 px-space-md">Type</th>
+<th class="py-3 px-space-md">Due Date</th>
+<th class="py-3 px-space-md">Status</th>
+<th class="py-3 px-space-md">Score</th>
+<th class="py-3 px-space-md">Attempts</th>
+<th class="py-3 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-body-sm">
+<!-- Row 1 (EXPANDED by default) -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors">
+<td class="py-4 px-space-md font-medium text-on-surface">
+<div class="flex items-center gap-2">
+<button class="w-6 h-6 rounded flex items-center justify-center text-primary bg-primary-fixed hover:bg-primary-fixed-dim transition-transform duration-200" id="toggleRowBtn" type="button">
+<span class="material-symbols-outlined text-[18px]" id="toggleIcon">expand_less</span>
+</button>
+<span class="font-semibold text-primary">Hardware Troubleshooting: Dead Workstation</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">memory</span>
+                  Simulation
+                </span>
+</td>
+<td class="py-4 px-space-md text-on-surface-variant">Feb 18, 2025</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-4 px-space-md font-code-md text-code-md font-semibold text-on-surface">86%</td>
+<td class="py-4 px-space-md font-code-md text-code-md text-on-surface-variant">2</td>
+<td class="py-4 px-space-md text-right">
+<button class="px-3 py-1 rounded bg-surface-container text-primary font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors" type="button">
+                  Telemetry Detail
+                </button>
+</td>
+</tr>
+<!-- Expanded Telemetry Decision Breakdown Accordion Panel -->
+<tr class="bg-surface-container-low" id="expandedContentRow">
+<td class="p-space-lg" colspan="7">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-lg">
+<!-- Header of the expanded run -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md border-b-0 gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+                        Attempt #2 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">(Submitted Yesterday, 14:22)</span>
+</h3>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-code-md text-label-sm font-semibold">
+                        Final Score: 86 / 100
+                      </span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-8 px-3 rounded bg-surface-container text-on-surface hover:bg-surface-container-high text-label-sm font-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Download Full Telemetry Log</span>
+</button>
+<button class="h-8 px-3 rounded bg-primary text-on-primary hover:bg-surface-tint text-label-sm font-label-sm flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add_comment</span>
+<span>Add Instructor Note</span>
+</button>
+</div>
+</div>
+<!-- Decision-by-Decision Sequential Feed -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Decision-by-Decision Audit Trail</span>
+<!-- Step 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Step 1: Safety Check: Disconnected AC Power &amp; Applied Anti-Static Wrist Strap</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Feedback: Excellent adherence to electrostatic discharge (ESD) safety protocols before touching internal chassis components.</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-code-md text-label-sm font-bold">+15 pts</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Step 2: Initial Symptom Triage: Monitored Motherboard LED and Fan Spin</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Feedback: Correctly observed continuous amber debug LED indicating DRAM fault rather than replacing the motherboard prematurely.</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-code-md text-label-sm font-bold">+10 pts</span>
+</div>
+</div>
+<!-- Step 3 (Warning) -->
+<div class="p-space-md rounded-lg bg-tertiary-fixed/30 flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/10 text-tertiary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Step 3: Diagnostic Action: Reseated RAM Module in DIMM Slot 2 without testing Slot 1</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Feedback: Partial diagnostic. Slot isolation test recommended before concluding module defect to avoid misdiagnosing slot pin corrosion.</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed-dim/40 text-on-tertiary-fixed font-code-md text-label-sm font-bold">-5 pts</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Step 4: Component Replacement: Swapped tested working DDR4 module into DIMM Slot 1</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Feedback: System booted to UEFI POST successfully. Root cause validated within target benchmark time (11m 40s total).</p>
+</div>
+</div>
+<div class="shrink-0 flex items-center">
+<span class="px-2.5 py-1 rounded-full bg-secondary/10 text-secondary font-code-md text-label-sm font-bold">+25 pts</span>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-4 px-space-md font-medium text-on-surface">Network Configuration &amp; Subnetting</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+                  Lab
+                </span>
+</td>
+<td class="py-4 px-space-md text-on-surface-variant">Feb 12, 2025</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Completed
+                </span>
+</td>
+<td class="py-4 px-space-md font-code-md text-code-md font-semibold text-on-surface">92%</td>
+<td class="py-4 px-space-md font-code-md text-code-md text-on-surface-variant">1</td>
+<td class="py-4 px-space-md text-right">
+<button class="px-3 py-1 rounded bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-colors" type="button">
+                  View Log
+                </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-4 px-space-md font-medium text-on-surface">Motherboard POST Code Diagnostics</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">memory</span>
+                  Simulation
+                </span>
+</td>
+<td class="py-4 px-space-md text-on-surface-variant">Feb 24, 2025</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                  In Progress
+                </span>
+</td>
+<td class="py-4 px-space-md font-code-md text-code-md text-on-surface-variant">68% <span class="text-[11px] font-normal text-outline">(interim)</span></td>
+<td class="py-4 px-space-md font-code-md text-code-md text-on-surface-variant">1</td>
+<td class="py-4 px-space-md text-right">
+<button class="px-3 py-1 rounded bg-primary/10 text-primary font-label-sm text-label-sm hover:bg-primary hover:text-on-primary transition-colors" type="button">
+                  Observe Live
+                </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-4 px-space-md font-medium text-on-surface">Power Supply Voltage Testing</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+                  Lab
+                </span>
+</td>
+<td class="py-4 px-space-md text-on-surface-variant">Feb 28, 2025</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Pending (4 days)
+                </span>
+</td>
+<td class="py-4 px-space-md font-code-md text-code-md text-outline">--</td>
+<td class="py-4 px-space-md font-code-md text-code-md text-outline">0</td>
+<td class="py-4 px-space-md text-right">
+<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm cursor-not-allowed" type="button">
+                  Not Started
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Faculty Instructor Observations / Audit Notes -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col md:flex-row items-start justify-between gap-space-lg">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">Instructor Evaluation Note</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            “Lerato demonstrated substantial acceleration between Attempt #1 and Attempt #2 on the workstation simulation. Her ESD mitigation is instinctual. Recommend supplementary isolation drill on multimeters prior to next week’s PSU voltage bench.”
+          </p>
+<span class="font-label-sm text-label-sm text-outline mt-1">— Recorded by Ms. Naidoo • Academic Lead, Dept of Applied Computing</span>
+</div>
+</div>
+<button class="shrink-0 h-10 px-4 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>View Audit History</span>
+</button>
+</section>
+</div>
+<!-- Interactive script to toggle attempt breakdown accordion -->
+<script>
+    (function() {
+      const toggleBtn = document.getElementById('toggleRowBtn');
+      const expandedRow = document.getElementById('expandedContentRow');
+      const toggleIcon = document.getElementById('toggleIcon');
+
+      if (toggleBtn && expandedRow && toggleIcon) {
+        toggleBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const isHidden = expandedRow.classList.contains('hidden');
+          if (isHidden) {
+            expandedRow.classList.remove('hidden');
+            toggleIcon.textContent = 'expand_less';
+          } else {
+            expandedRow.classList.add('hidden');
+            toggleIcon.textContent = 'expand_more';
+          }
+        });
+      }
+    })();
+  </script>
+</div></main></div></body></html>

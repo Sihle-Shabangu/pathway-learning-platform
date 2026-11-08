@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary-fixed":"#dee1ff","surface-tint":"#304fd8","on-secondary":"#ffffff","tertiary":"#633f00","surface-container-lowest":"#ffffff","on-tertiary-fixed-variant":"#643f00","outline-variant":"#c4c5d7","surface-dim":"#d1d9fb","primary-fixed-dim":"#b9c3ff","surface-container-low":"#f3f3ff","surface-container":"#ebedff","inverse-on-surface":"#eff0ff","on-primary-fixed":"#001258","on-tertiary":"#ffffff","on-primary-fixed-variant":"#0433c1","on-tertiary-container":"#ffd095","on-background":"#121a34","tertiary-fixed-dim":"#ffb957","on-surface-variant":"#444654","surface-container-high":"#e3e7ff","tertiary-fixed":"#ffddb5","surface-container-highest":"#dbe1ff","error":"#ba1a1a","inverse-surface":"#272f4a","surface-variant":"#dbe1ff","primary-container":"#2f4fd8","background":"#faf8ff","on-error-container":"#93000a","on-primary":"#ffffff","on-primary-container":"#d0d6ff","outline":"#747686","secondary":"#006a64","error-container":"#ffdad6","tertiary-container":"#835400","surface":"#faf8ff","on-surface":"#121a34","secondary-container":"#81f6eb","secondary-fixed-dim":"#63d9cf","on-secondary-fixed-variant":"#00504b","surface-bright":"#faf8ff","on-secondary-container":"#00716a","on-secondary-fixed":"#00201e","inverse-primary":"#b9c3ff","secondary-fixed":"#81f6eb","on-error":"#ffffff","on-tertiary-fixed":"#2a1800","primary":"#0333c0"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","margin":"2rem","gutter":"1.5rem","space-md":"1rem","margin-mobile":"1rem","space-xl":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-mobile":"1rem"},fontFamily:{"headline-lg":["Inter"],"label-md":["Inter"],"body-lg":["Inter"],"headline-md":["Inter"],"headline-xl-mobile":["Inter"],"headline-xl":["Inter"],"code-md":["JetBrains Mono"],"headline-sm":["Inter"],"body-sm":["Inter"],"body-md":["Inter"],"label-sm":["Inter"]},fontSize:{"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"600"}],"code-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"22px","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm border-b border-outline-variant/20"><img alt="Pathway Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrADqBDUxHPdSqZocTuBjcYiwEtUmk3z2onaxFyEIkbPHF2xTLqb9Lxl9bQ1E8q1iU4JIy0AdhfRYQY3hPcJaXWSCP8B7_FvSZVKVkEbBN9kCcyYcZVhTV2HXFz9z2jH6h5ijRzZ-UsCKQbqfzWRsbFwCTQA7_SGxCTtNzsu4zyablsN_R5Nb3i61Qv1DAejZ5Qip8CbM0rYa9aZb5xjo12u0yvnatoYPTQOGp_tdwt7"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Pathway</span></div><nav class="flex flex-col gap-space-xs p-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-md"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-label-md" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learners" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Learners</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="activities" href="#"><span class="material-symbols-outlined text-[20px]">local_library</span><span>Activities</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px]">insert_chart</span><span>Reports</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="simulation" href="#"><span class="material-symbols-outlined text-[20px]">memory</span><span>Simulation</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="my-progress" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span>My Progress</span></a></nav></div><div class="p-space-sm border-t border-outline-variant/20"><div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtwuhDhNQ7q8eFrQuXgrbwwhm8EiXXLFP-at3IPpO3xsK49zg1SKXyoMmRTHJAeF7if1Unu20za9d6P9aMGqbv0fnE50A33_QN3chMmTvNCw1yTjEuGvCJudRNJLtS5hqJP2cQt5gNU1ZYnzuZ_xCWoLUCAVJFFgfaUyxJNgw7tdHRjTbJLH382KqQNrQVtzLyrLXfOTnXfvGFdLCfrDl6-jgxqBm-ukcJKoF80g8"/><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Ms. Naidoo</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Administrator</span></div><button class="text-on-surface-variant hover:text-on-surface p-space-xs flex items-center justify-center" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface-variant">Academic Hub</span><span class="text-outline-variant font-label-sm text-label-sm">/</span><span class="font-label-md text-label-md text-primary font-semibold">Console</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined text-outline absolute left-3 text-[18px]">search</span><input class="w-72 h-10 pl-9 pr-space-md rounded-lg bg-surface border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search simulation assets, learners..." type="text"/></div><div class="relative"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><button class="h-10 px-space-md rounded-lg bg-primary font-label-md text-label-md text-on-primary hover:bg-surface-tint active:bg-primary-container flex items-center gap-space-xs shadow-[0_1px_4px_rgba(3,51,192,0.2)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Session</span></button></div></header><main class="relative pt-16 w-full flex-1 bg-surface"><div class="flex flex-col w-full">
+<div class="p-margin flex flex-col gap-space-xl max-w-[1440px] mx-auto w-full">
+<!-- Top Greeting & Executive Controls -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-code-md text-label-sm text-primary uppercase tracking-wider">Academic Term Q2</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline">Real-Time Telemetry</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Good morning, Ms. Naidoo</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Institutional Learning &amp; Simulation Overview · Cohort 2025</p>
+</div>
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="h-10 px-space-md rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">assignment_turned_in</span>
+<span>Assign activity</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>+ Add learner</span>
+</button>
+</div>
+</div>
+<!-- 4 KPI Metrics Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Total learners</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">248</span>
+<div class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+12% vs last week</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-space-md overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Active learners</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">sensors</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">231</span>
+<div class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">
+<span>93% engagement</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-space-md overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 93%"></div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Assigned activities</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">612</span>
+<div class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+<span>+24 this week</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-space-md overflow-hidden">
+<div class="bg-tertiary-container h-full rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Completion rate</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between mt-space-md">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">74%</span>
+<div class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+<span>+5.2% MoM</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full mt-space-md overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 74%"></div>
+</div>
+</div>
+</div>
+<!-- Data Visualizations (2-Column Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Completions over 30 days Chart -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Completions over 30 days</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Total automated &amp; mentored runs submitted</span>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg">
+<button class="px-2 py-1 rounded bg-surface-container-lowest font-label-sm text-label-sm text-on-surface shadow-xs" type="button">30D</button>
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">90D</button>
+</div>
+</div>
+<!-- SVG Line Chart Canvas -->
+<div class="relative w-full h-64 mt-space-xs">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 540 220">
+<defs>
+<lineargradient id="completionGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#2F4FD8" stop-opacity="0.22"></stop>
+<stop offset="100%" stop-color="#2F4FD8" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Background Guide Grids -->
+<line stroke="#EBEDFF" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="540" y1="30" y2="30"></line>
+<line stroke="#EBEDFF" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="540" y1="80" y2="80"></line>
+<line stroke="#EBEDFF" stroke-dasharray="3 3" stroke-width="1" x1="0" x2="540" y1="130" y2="130"></line>
+<line stroke="#EBEDFF" stroke-width="1" x1="0" x2="540" y1="180" y2="180"></line>
+<!-- Area Fill -->
+<path d="M 0 170 C 45 160, 75 145, 110 148 C 150 152, 185 110, 220 102 C 260 92, 290 120, 330 90 C 365 65, 395 30, 430 30 C 465 30, 500 75, 540 60 L 540 180 L 0 180 Z" fill="url(#completionGrad)"></path>
+<!-- Solid Line -->
+<path d="M 0 170 C 45 160, 75 145, 110 148 C 150 152, 185 110, 220 102 C 260 92, 290 120, 330 90 C 365 65, 395 30, 430 30 C 465 30, 500 75, 540 60" fill="none" stroke="#2F4FD8" stroke-linecap="round" stroke-width="3"></path>
+<!-- Key Target Baseline -->
+<line opacity="0.6" stroke="#006A64" stroke-dasharray="4 4" stroke-width="1.5" x1="0" x2="540" y1="65" y2="65"></line>
+<!-- Peak Callout Point -->
+<circle cx="430" cy="30" fill="#FFFFFF" r="5" stroke="#2F4FD8" stroke-width="3"></circle>
+</svg>
+<!-- Peak Day Tooltip (Interactive / Anchored Look) -->
+<div class="absolute left-[72%] top-[2px] -translate-x-1/2 bg-inverse-surface text-inverse-on-surface px-space-sm py-1.5 rounded-lg shadow-md flex flex-col items-center pointer-events-none">
+<span class="font-code-md text-label-sm font-semibold tracking-wide">42 completions</span>
+<span class="font-label-sm text-[10px] text-outline-variant">May 21 (Peak)</span>
+<div class="w-2 h-2 bg-inverse-surface rotate-45 -mb-2 mt-0.5"></div>
+</div>
+</div>
+<!-- Month Dates along X-Axis -->
+<div class="flex justify-between items-center pt-space-sm font-code-md text-label-sm text-outline border-t border-surface-container">
+<span>May 01</span>
+<span>May 08</span>
+<span>May 15</span>
+<span>May 22</span>
+<span>May 30</span>
+</div>
+</div>
+<!-- Completion Rate by Activity Bar Chart -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Completion Rate by Activity</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Comparative benchmark against threshold (70%)</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Practical</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>Theoretical</span>
+</div>
+</div>
+</div>
+<!-- Bar Graph Rows -->
+<div class="flex flex-col gap-space-md my-auto">
+<!-- Activity 1 -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="text-on-surface font-semibold">Hardware Troubleshooting</span>
+<span class="font-code-md text-secondary">84%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 84%"></div>
+</div>
+</div>
+<!-- Activity 2 -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="text-on-surface font-semibold">Network Config</span>
+<span class="font-code-md text-primary">72%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 72%"></div>
+</div>
+</div>
+<!-- Activity 3 -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="text-on-surface font-semibold">Cyber Hygiene</span>
+<span class="font-code-md text-secondary">68%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 68%"></div>
+</div>
+</div>
+<!-- Activity 4 -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex justify-between items-baseline font-label-md text-label-md">
+<span class="text-on-surface font-semibold">OS Kernel Diagnostics</span>
+<span class="font-code-md text-primary">56%</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 56%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-sm text-outline font-label-sm text-label-sm border-t border-surface-container">
+<span>Target baseline: 70%</span>
+<span class="text-primary font-semibold cursor-pointer hover:underline">View module breakdowns →</span>
+</div>
+</div>
+</div>
+<!-- Bottom Section (2 Columns: Recent Activity & Needs Attention) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter mb-space-xl">
+<!-- Recent Activity Feed -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Recent Activity</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Live Feed</span>
+</div>
+<div class="flex flex-col divide-y divide-surface-container mt-space-sm">
+<!-- Feed Item 1 -->
+<div class="py-space-md flex items-start gap-space-md hover:bg-surface-container-low px-space-xs rounded-lg transition-colors">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<p class="font-body-md text-body-md text-on-surface truncate">
+<span class="font-semibold text-on-surface">Thabo M.</span> completed Hardware Troubleshooting
+                  </p>
+<span class="font-code-md text-label-sm text-outline flex-shrink-0">14m ago</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-code-md text-label-sm font-semibold">86% Score</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Validated by Auto-Grader</span>
+</div>
+</div>
+</div>
+<!-- Feed Item 2 -->
+<div class="py-space-md flex items-start gap-space-md hover:bg-surface-container-low px-space-xs rounded-lg transition-colors">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<p class="font-body-md text-body-md text-on-surface truncate">
+<span class="font-semibold text-on-surface">Lerato K.</span> started Computer Hardware Diagnostics
+                  </p>
+<span class="font-code-md text-label-sm text-outline flex-shrink-0">32m ago</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Step 2: Component Swap</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Station #04</span>
+</div>
+</div>
+</div>
+<!-- Feed Item 3 -->
+<div class="py-space-md flex items-start gap-space-md hover:bg-surface-container-low px-space-xs rounded-lg transition-colors">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">task_alt</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<p class="font-body-md text-body-md text-on-surface truncate">
+<span class="font-semibold text-on-surface">Sipho N.</span> completed Network Routing Simulation
+                  </p>
+<span class="font-code-md text-label-sm text-outline flex-shrink-0">1h ago</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-code-md text-label-sm font-semibold">94% High Honors</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Validated by Auto-Grader</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-space-sm py-2 rounded-lg bg-surface-container font-label-md text-label-md text-primary hover:bg-surface-container-high transition-colors text-center" type="button">
+          Show all learner logs
+        </button>
+</div>
+<!-- Needs Attention Alert Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Needs Attention</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">3 Action Items</span>
+</div>
+<div class="flex flex-col gap-space-sm mt-space-md">
+<!-- Alert Item 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Kagiso D.</span>
+<span class="font-body-sm text-body-sm text-error truncate">Hardware Troubleshooting overdue by 3 days</span>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary font-label-md text-label-md transition-colors shadow-xs flex-shrink-0" type="button">
+                View
+              </button>
+</div>
+<!-- Alert Item 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">priority_high</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Zanele M.</span>
+<span class="font-body-sm text-body-sm text-tertiary truncate">3 failed diagnostic attempts</span>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary font-label-md text-label-md transition-colors shadow-xs flex-shrink-0" type="button">
+                View
+              </button>
+</div>
+<!-- Alert Item 3 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-center justify-between gap-space-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">person_off</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Brandon P.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Inactive for 14 days</span>
+</div>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary font-label-md text-label-md transition-colors shadow-xs flex-shrink-0" type="button">
+                View
+              </button>
+</div>
+</div>
+</div>
+<div class="pt-space-md flex items-center justify-between text-outline-variant font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Automated alerts refresh hourly</span>
+<button class="text-primary font-semibold hover:underline" type="button">Batch outreach →</button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

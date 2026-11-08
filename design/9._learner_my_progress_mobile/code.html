@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Progress - Pathway</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body{min-height:max(884px,100dvh);}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "primary-fixed": "#dee1ff", "surface-tint": "#304fd8", "on-secondary": "#ffffff", "tertiary": "#633f00", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#643f00", "outline-variant": "#c4c5d7", "surface-dim": "#d1d9fb", "primary-fixed-dim": "#b9c3ff", "surface-container-low": "#f3f3ff", "surface-container": "#ebedff", "inverse-on-surface": "#eff0ff", "on-primary-fixed": "#001258", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#0433c1", "on-tertiary-container": "#ffd095", "on-background": "#121a34", "tertiary-fixed-dim": "#ffb957", "on-surface-variant": "#444654", "surface-container-high": "#e3e7ff", "tertiary-fixed": "#ffddb5", "surface-container-highest": "#dbe1ff", "error": "#ba1a1a", "inverse-surface": "#272f4a", "surface-variant": "#dbe1ff", "primary-container": "#2f4fd8", "background": "#faf8ff", "on-error-container": "#93000a", "on-primary": "#ffffff", "on-primary-container": "#d0d6ff", "outline": "#747686", "secondary": "#006a64", "error-container": "#ffdad6", "tertiary-container": "#835400", "surface": "#faf8ff", "on-surface": "#121a34", "secondary-container": "#81f6eb", "secondary-fixed-dim": "#63d9cf", "on-secondary-fixed-variant": "#00504b", "surface-bright": "#faf8ff", "on-secondary-container": "#00716a", "on-secondary-fixed": "#00201e", "inverse-primary": "#b9c3ff", "secondary-fixed": "#81f6eb", "on-error": "#ffffff", "on-tertiary-fixed": "#2a1800", "primary": "#0333c0" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "margin": "2rem", "gutter": "1.5rem", "space-md": "1rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "gutter-mobile": "1rem" }, fontFamily: { "headline-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "headline-xl-mobile": ["Inter"], "headline-xl": ["Inter"], "code-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] }, fontSize: { "headline-lg": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "fontWeight": "600" }], "code-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(18,26,52,0.04)] pt-safe"><div class="h-16 px-margin-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="Pathway Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/ALJJyrADqBDUxHPdSqZocTuBjcYiwEtUmk3z2onaxFyEIkbPHF2xTLqb9Lxl9bQ1E8q1iU4JIy0AdhfRYQY3hPcJaXWSCP8B7_FvSZVKVkEbBN9kCcyYcZVhTV2HXFz9z2jH6h5ijRzZ-UsCKQbqfzWRsbFwCTQA7_SGxCTtNzsu4zyablsN_R5Nb3i61Qv1DAejZ5Qip8CbM0rYa9aZb5xjo12u0yvnatoYPTQOGp_tdwt7"/><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-on-surface-variant leading-none truncate">Pathway</span><h1 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight">Progress</h1></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button aria-label="Switch Role or View" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">swap_horiz</span></button></div></div></header><main class="flex-1 w-full pt-16 pb-20 bg-surface px-margin-mobile"><div class="flex flex-col w-full pb-6 space-y-space-md">
+<!-- USER WELCOME & TOP ACTION BAR -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="Close up warm portrait of Lerato Khumalo, a young female South African engineering student with braided hair, friendly intelligent expression, soft natural indoor lab lighting with subtle blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbQnMILI5R9sRJ6MDLE3ETIv_JTf3axdfFgb0FfQsmL4A2Se42Q-TB2QekjlBIVJaS3212k994Qrh4E1P6blSMOa3gyV4sPduv9oVWu5Of-5U6oEYd794dFJnsB02wbgjCnwAAivNEr77qZ3yf_To9mVYUC_DDfapD7BrJM5gdEfPkfLdlhx0o2WkMxH9X5PsCeeXp5uLqZADlws3r_0L1lT4Oz7JUjCR5A0yPX3k"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-secondary rounded-full ring-2 ring-surface-container-lowest"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Lerato Khumalo</span>
+<span class="material-symbols-outlined text-secondary text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+          Hardware &amp; Systems • Level 3
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button aria-label="Export Progress Report" class="h-10 px-space-sm rounded-lg bg-surface-container-low text-primary flex items-center gap-1 active:scale-95 transition-transform hover:bg-surface-container" id="export-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+<span class="font-label-md text-label-md">Export</span>
+</button>
+</div>
+</div>
+<!-- 2x2 METRICS GRID -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Stat 1: Completed -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Completed</span>
+<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface">3</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">/ 5</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+<!-- Stat 2: Avg Score -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Avg Score</span>
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">military_tech</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface">84.5</span>
+<span class="font-label-md text-label-md text-on-surface-variant">%</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 mt-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> +4.2% trajectory
+        </span>
+</div>
+</div>
+<!-- Stat 3: Total Sim Time -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Sim Time</span>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface">18.5</span>
+<span class="font-label-md text-label-md text-on-surface-variant">hrs</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 block">Active immersion</span>
+</div>
+</div>
+<!-- Stat 4: Mastery Rank -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mastery Rank</span>
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">workspace_premium</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-primary">Top 5</span>
+<span class="font-label-md text-label-md text-primary">%</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-medium mt-1 block">Cohort Distinction</span>
+</div>
+</div>
+</div>
+<!-- PERFORMANCE TRAJECTORY CARD -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Performance Trajectory</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Simulation scoring over active term</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+        Passing: 75%
+      </span>
+</div>
+<!-- SVG Performance Curve Graph -->
+<div class="relative w-full pt-2 pb-1">
+<svg class="w-full h-36 overflow-visible" fill="none" viewbox="0 0 320 140" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="gradientTrajectory" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#2F4FD8" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#2F4FD8" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Subtle horizontal grid lines -->
+<line stroke="#EBEDFF" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line stroke="#EBEDFF" stroke-width="1" x1="0" x2="320" y1="60" y2="60"></line>
+<line stroke="#EBEDFF" stroke-width="1" x1="0" x2="320" y1="100" y2="100"></line>
+<!-- Benchmark 75% dashed line (y ≈ 85) -->
+<line stroke="#0E9F96" stroke-dasharray="4 4" stroke-width="1.5" x1="0" x2="320" y1="85" y2="85"></line>
+<text fill="#00716A" font-family="Inter" font-size="10" font-weight="600" x="6" y="80">BENCHMARK 75%</text>
+<!-- Area fill under curve: 78% (y=75), 82% (y=62), 91% (y=30), 86% (y=48) -->
+<path d="M 20 75 C 65 72, 85 64, 110 62 C 150 58, 175 32, 210 30 C 255 28, 275 46, 300 48 L 300 120 L 20 120 Z" fill="url(#gradientTrajectory)"></path>
+<!-- Primary curve line -->
+<path d="M 20 75 C 65 72, 85 64, 110 62 C 150 58, 175 32, 210 30 C 255 28, 275 46, 300 48" stroke="#2F4FD8" stroke-linecap="round" stroke-width="3"></path>
+<!-- Node 1: 78% -->
+<circle cx="20" cy="75" fill="#FFFFFF" r="4" stroke="#2F4FD8" stroke-width="2.5"></circle>
+<text fill="#444654" font-family="JetBrains Mono" font-size="11" font-weight="500" text-anchor="middle" x="20" y="98">78%</text>
+<text fill="#747686" font-family="Inter" font-size="9" text-anchor="middle" x="20" y="114">JAN</text>
+<!-- Node 2: 82% -->
+<circle cx="110" cy="62" fill="#FFFFFF" r="4" stroke="#2F4FD8" stroke-width="2.5"></circle>
+<text fill="#444654" font-family="JetBrains Mono" font-size="11" font-weight="500" text-anchor="middle" x="110" y="85">82%</text>
+<text fill="#747686" font-family="Inter" font-size="9" text-anchor="middle" x="110" y="114">FEB 01</text>
+<!-- Node 3: 91% -->
+<circle cx="210" cy="30" fill="#FFFFFF" r="5" stroke="#2F4FD8" stroke-width="3"></circle>
+<rect fill="#2F4FD8" height="17" rx="4" width="34" x="193" y="6"></rect>
+<text fill="#FFFFFF" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="middle" x="210" y="18">91%</text>
+<text fill="#747686" font-family="Inter" font-size="9" text-anchor="middle" x="210" y="114">FEB 12</text>
+<!-- Node 4: 86% (Latest) -->
+<circle cx="300" cy="48" fill="#0E9F96" r="5" stroke="#FFFFFF" stroke-width="2"></circle>
+<text fill="#00716A" font-family="JetBrains Mono" font-size="11" font-weight="600" text-anchor="middle" x="300" y="40">86%</text>
+<text fill="#747686" font-family="Inter" font-size="9" text-anchor="middle" x="300" y="114">FEB 18</text>
+</svg>
+</div>
+</div>
+<!-- COMPETENCY PROGRESS BARS -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Core Competencies</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Validated Criteria</span>
+</div>
+<div class="space-y-space-md">
+<!-- Competency 1: Safety -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Safety Protocols</span>
+</div>
+<span class="font-code-md text-code-md text-secondary font-semibold">95%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: 95%;"></div>
+</div>
+</div>
+<!-- Competency 2: Reasoning -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px]">psychology</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Diagnostic Reasoning</span>
+</div>
+<span class="font-code-md text-code-md text-primary font-semibold">88%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Competency 3: Precision -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">tune</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Tool &amp; Rig Precision</span>
+</div>
+<span class="font-code-md text-code-md text-tertiary font-semibold">79%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary-fixed-dim h-full rounded-full transition-all duration-500" style="width: 79%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPLETION HISTORY LIST -->
+<div class="space-y-space-sm pt-1">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Completion History</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Modules Logged</span>
+</div>
+<!-- History Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm active:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">build</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Hardware Troubleshooting</span>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Feb 18</span>
+<span>•</span>
+<span class="font-code-md text-code-md text-primary font-semibold">Score: 86%</span>
+</div>
+</div>
+</div>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-semibold flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all flex-shrink-0" onclick="handleReview('Hardware Troubleshooting')" type="button">
+        Review
+      </button>
+</div>
+<!-- History Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm active:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Network Configuration</span>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Feb 12</span>
+<span>•</span>
+<span class="font-code-md text-code-md text-secondary font-semibold">Score: 92%</span>
+</div>
+</div>
+</div>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-semibold flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all flex-shrink-0" onclick="handleReview('Network Configuration')" type="button">
+        Review
+      </button>
+</div>
+<!-- History Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm active:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">lock_reset</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Cyber Hygiene</span>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Jan 28</span>
+<span>•</span>
+<span class="font-code-md text-code-md text-primary font-semibold">Score: 88%</span>
+</div>
+</div>
+</div>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-semibold flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all flex-shrink-0" onclick="handleReview('Cyber Hygiene')" type="button">
+        Review
+      </button>
+</div>
+<!-- History Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between gap-space-sm active:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">electrical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Power Supply Testing</span>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Jan 15</span>
+<span>•</span>
+<span class="font-code-md text-code-md text-secondary font-semibold">Score: 94%</span>
+</div>
+</div>
+</div>
+<button class="h-11 px-space-md rounded-lg bg-surface-container-low text-primary font-label-md text-label-md font-semibold flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all flex-shrink-0" onclick="handleReview('Power Supply Testing')" type="button">
+        Review
+      </button>
+</div>
+</div>
+<!-- INTERACTIVE FEEDBACK TOAST NOTIFICATION -->
+<div class="fixed bottom-24 left-4 right-4 bg-inverse-surface text-inverse-on-surface p-space-md rounded-xl shadow-xl flex items-center justify-between transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none z-50" id="toast-banner">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toast-message">Transcript exported successfully</span>
+</div>
+<button class="text-inverse-on-surface/80 hover:text-inverse-on-surface p-1" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  // Dynamic feedback and review triggers
+  function showToast(message) {
+    const toast = document.getElementById('toast-banner');
+    const toastMsg = document.getElementById('toast-message');
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = message;
+    toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    
+    setTimeout(() => {
+      hideToast();
+    }, 3200);
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('toast-banner');
+    if (!toast) return;
+    toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+    toast.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+  }
+
+  function handleReview(moduleName) {
+    showToast(`Opening simulation telemetry review: ${moduleName}`);
+  }
+
+  const exportBtn = document.getElementById('export-btn');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', () => {
+      showToast('Generating certified PDF transcript for Lerato Khumalo...');
+    });
+  }
+
+  // Set the "Progress" navigation icon in shell to active accent color
+  document.addEventListener('DOMContentLoaded', () => {
+    const progressNavLink = document.querySelector('nav a[data-path="progress"]');
+    if (progressNavLink) {
+      document.querySelectorAll('nav a').forEach(el => {
+        el.classList.remove('text-primary', 'font-semibold');
+        el.classList.add('text-on-surface-variant');
+      });
+      progressNavLink.classList.remove('text-on-surface-variant');
+      progressNavLink.classList.add('text-primary', 'font-semibold');
+      const icon = progressNavLink.querySelector('.material-symbols-outlined');
+      if (icon) {
+        icon.style.fontVariationSettings = "'FILL' 1";
+      }
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(18,26,52,0.05)]" data-active-classes="text-primary font-semibold"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-sm text-label-sm mt-0.5">Home</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="activities" href="#"><span class="material-symbols-outlined text-[24px]">assignment</span><span class="font-label-sm text-label-sm mt-0.5">Activities</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="sim" href="#"><span class="material-symbols-outlined text-[24px]">science</span><span class="font-label-sm text-label-sm mt-0.5">Sim</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors text-primary font-semibold" data-path="progress" href="#"><span class="material-symbols-outlined text-[24px]">insights</span><span class="font-label-sm text-label-sm mt-0.5">Progress</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[24px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">Profile</span></a></div></nav></body></html>

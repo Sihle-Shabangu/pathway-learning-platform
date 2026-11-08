@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#304fd8","error":"#ba1a1a","tertiary":"#633f00","tertiary-fixed":"#ffddb5","on-tertiary":"#ffffff","surface-container":"#ebedff","inverse-primary":"#b9c3ff","on-primary-fixed-variant":"#0433c1","on-surface":"#121a34","secondary-container":"#81f6eb","secondary-fixed-dim":"#63d9cf","on-background":"#121a34","outline-variant":"#c4c5d7","on-primary-fixed":"#001258","secondary-fixed":"#81f6eb","error-container":"#ffdad6","surface-bright":"#faf8ff","on-secondary-container":"#00716a","surface-container-lowest":"#ffffff","inverse-surface":"#272f4a","on-tertiary-container":"#ffd095","primary-fixed":"#dee1ff","surface-container-high":"#e3e7ff","primary-fixed-dim":"#b9c3ff","tertiary-container":"#835400","surface-container-low":"#f3f3ff","on-secondary":"#ffffff","surface-container-highest":"#dbe1ff","primary":"#0333c0","on-primary-container":"#d0d6ff","surface-dim":"#d1d9fb","surface-variant":"#dbe1ff","on-surface-variant":"#444654","secondary":"#006a64","outline":"#747686","tertiary-fixed-dim":"#ffb957","on-error-container":"#93000a","on-secondary-fixed-variant":"#00504b","on-error":"#ffffff","surface":"#faf8ff","on-tertiary-fixed":"#2a1800","on-primary":"#ffffff","background":"#faf8ff","primary-container":"#2f4fd8","on-secondary-fixed":"#00201e","inverse-on-surface":"#eff0ff","on-tertiary-fixed-variant":"#643f00"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"2rem","space-sm":"0.5rem","space-xl":"2rem","gutter-mobile":"1rem","space-md":"1rem","space-lg":"1.5rem","gutter":"1.5rem","space-xs":"0.25rem","margin-mobile":"1rem"},fontFamily:{"code-md":["JetBrains Mono"],"body-sm":["Inter"],"body-lg":["Inter"],"headline-xl":["Inter"],"headline-sm":["Inter"],"label-sm":["Inter"],"headline-md":["Inter"],"body-md":["Inter"],"headline-xl-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"]},fontSize:{"code-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"600"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"500"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"22px","fontWeight":"400"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm border-b border-outline-variant/20"><img alt="Pathway Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrADqBDUxHPdSqZocTuBjcYiwEtUmk3z2onaxFyEIkbPHF2xTLqb9Lxl9bQ1E8q1iU4JIy0AdhfRYQY3hPcJaXWSCP8B7_FvSZVKVkEbBN9kCcyYcZVhTV2HXFz9z2jH6h5ijRzZ-UsCKQbqfzWRsbFwCTQA7_SGxCTtNzsu4zyablsN_R5Nb3i61Qv1DAejZ5Qip8CbM0rYa9aZb5xjo12u0yvnatoYPTQOGp_tdwt7"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Pathway</span></div><div class="p-space-sm pb-0"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Administrator</span></div><nav class="flex flex-col gap-space-xs px-space-sm pt-space-xs pb-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="admin-dashboard" href="#">Dashboard</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="admin-learners" href="#">Learners</a><a aria-current="page" class="flex items-center px-space-sm py-space-sm rounded-lg transition-colors bg-primary-container text-on-primary font-label-md" data-path="admin-activities" href="#">Activities</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="admin-reports" href="#">Reports</a></nav><div class="p-space-sm pb-0 pt-0"><span class="px-space-sm font-label-sm text-label-sm text-outline uppercase tracking-wider">Learner Portal</span></div><nav class="flex flex-col gap-space-xs px-space-sm pt-space-xs pb-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-md"><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-home" href="#">Home</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-activities" href="#">My Activities</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-progress" href="#">My Progress</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-simulation" href="#">Simulation Bench</a><a class="flex items-center px-space-sm py-space-sm rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="learner-simulation-results" href="#">Simulation Results</a></nav></div><div class="p-space-sm border-t border-outline-variant/20 flex flex-col gap-space-xs"><div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><img alt="Ms. Naidoo" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtwuhDhNQ7q8eFrQuXgrbwwhm8EiXXLFP-at3IPpO3xsK49zg1SKXyoMmRTHJAeF7if1Unu20za9d6P9aMGqbv0fnE50A33_QN3chMmTvNCw1yTjEuGvCJudRNJLtS5hqJP2cQt5gNU1ZYnzuZ_xCWoLUCAVJFFgfaUyxJNgw7tdHRjTbJLH382KqQNrQVtzLyrLXfOTnXfvGFdLCfrDl6-jgxqBm-ukcJKoF80g8"/><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Ms. Naidoo</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Administrator</span></div><button class="text-on-surface-variant hover:text-on-surface p-space-xs flex items-center justify-center" title="User menu" type="button"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div><div class="flex items-center gap-space-sm p-space-xs rounded-lg hover:bg-surface-container-low transition-colors"><div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container font-label-md flex items-center justify-center font-semibold text-[13px]">LM</div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-surface truncate">Learato Molefe</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Enrolled Learner</span></div><button class="text-on-surface-variant hover:text-on-surface p-space-xs flex items-center justify-center" title="Switch profile" type="button"><span class="material-symbols-outlined text-[18px]">swap_horiz</span></button></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl border-b border-outline-variant/30 z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface-variant">Academic Hub</span><span class="text-outline-variant font-label-sm text-label-sm">/</span><span class="font-label-md text-label-md text-primary font-semibold">Console</span></div><div class="flex items-center gap-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined text-outline absolute left-3 text-[18px]">search</span><input class="w-72 h-10 pl-9 pr-space-md rounded-lg bg-surface border border-outline-variant/40 font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search simulation assets, learners..." type="text"/></div><div class="relative"><button class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></div><button class="h-10 px-space-md rounded-lg bg-primary font-label-md text-label-md text-on-primary hover:bg-surface-tint active:bg-primary-container flex items-center gap-space-xs shadow-[0_1px_4px_rgba(3,51,192,0.2)] transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Session</span></button></div></header><main class="relative pt-16 w-full flex-1 bg-surface"><div class="flex flex-col w-full">
+<div class="p-margin max-w-7xl mx-auto w-full flex flex-col gap-space-xl">
+<!-- Top Stats & Header Banner -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold tracking-wide">
+            CURRICULUM REPOSITORY
+          </span>
+<span class="font-code-md text-code-md text-outline">v4.8.2 Live Sandbox</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Learning Activities &amp; Practical Simulations
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Curate laboratory curricula, monitor completion metrics, and assign diagnostic modules to synchronized engineering cohorts.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="h-10 px-space-md rounded-lg bg-surface-container font-label-md text-label-md text-primary hover:bg-surface-container-high transition-colors flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Batch Parameters</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-primary font-label-md text-label-md text-on-primary hover:bg-surface-tint shadow-[0_2px_8px_rgba(3,51,192,0.25)] transition-all flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>+ Create activity</span>
+</button>
+</div>
+</div>
+<!-- Telemetry Strip -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Active Modules</span>
+<span class="font-headline-md text-headline-md text-on-surface">18 Modules</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Cohort Avg Rate</span>
+<span class="font-headline-md text-headline-md text-on-surface">77.6% Completed</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container/10 text-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">group</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Enrolled Engineers</span>
+<span class="font-headline-md text-headline-md text-on-surface">248 Students</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">timer</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Avg Diagnostic Time</span>
+<span class="font-headline-md text-headline-md text-on-surface">36.2 min</span>
+</div>
+</div>
+</div>
+<!-- Search & Filter Bar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined text-outline absolute left-3.5 top-2.5 text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-space-md rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search simulations, labs, modules..." type="text" value=""/>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="inline-flex p-1 bg-surface-container-low rounded-lg gap-1">
+<button class="px-3 py-1.5 rounded-md bg-surface-container-lowest shadow-sm font-label-sm text-label-sm text-primary font-semibold transition-all" type="button">
+            All Activities (8)
+          </button>
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+            Simulations (5)
+          </button>
+<button class="px-3 py-1.5 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+            Guided Labs (3)
+          </button>
+</div>
+<div class="relative">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-low font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-outline">group</span>
+<span>Cohort 2025 - Section A</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</button>
+</div>
+<button class="h-10 w-10 rounded-lg bg-surface-container-low flex items-center justify-center text-outline hover:text-on-surface transition-colors" title="Filter options" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Activity Cards Grid (3 Columns) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm font-semibold">
+                Simulation
+              </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Core Module
+              </span>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Hardware Troubleshooting: Dead Workstation
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Step-by-step triage of a non-responsive motherboard, checking EPS 12V rails, RAM seatings, and front panel short-circuits.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs font-code-md text-code-md text-on-surface-variant pt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>45 mins</span>
+<span class="text-outline/40">•</span>
+<span>4 interactive stages</span>
+<span class="text-outline/40">•</span>
+<span>238 assigned</span>
+</div>
+<!-- Progress -->
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline">Cohort Completion</span>
+<span class="text-secondary font-semibold font-code-md">84% avg</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 84%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low/60 flex items-center justify-between gap-space-sm mt-auto">
+<button class="flex-1 h-9 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">query_stats</span>
+<span>View stats</span>
+</button>
+<button class="flex-1 h-9 rounded-lg bg-primary font-label-sm text-label-sm text-on-primary hover:bg-surface-tint transition-colors flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Assign</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-label-sm font-semibold">
+                Guided Lab
+              </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Intermediate
+              </span>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Network Configuration &amp; Subnetting Lab
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Virtual rack arrangement, assigning CIDR blocks, DHCP scope definition, and testing inter-VLAN routing tables.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs font-code-md text-code-md text-on-surface-variant pt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>30 mins</span>
+<span class="text-outline/40">•</span>
+<span>3 topologies</span>
+<span class="text-outline/40">•</span>
+<span>220 assigned</span>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline">Cohort Completion</span>
+<span class="text-secondary font-semibold font-code-md">72% avg</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low/60 flex items-center justify-between gap-space-sm mt-auto">
+<button class="flex-1 h-9 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">query_stats</span>
+<span>View stats</span>
+</button>
+<button class="flex-1 h-9 rounded-lg bg-primary font-label-sm text-label-sm text-on-primary hover:bg-surface-tint transition-colors flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Assign</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm font-semibold">
+                Simulation
+              </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+                Advanced
+              </span>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              POST Code Hex Diagnostics &amp; Motherboard Triage
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Decoding seven-segment hexadecimal displays during bootstrap cycles, identifying DRAM failure and CMOS parity lockups.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs font-code-md text-code-md text-on-surface-variant pt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>50 mins</span>
+<span class="text-outline/40">•</span>
+<span>5 fault branches</span>
+<span class="text-outline/40">•</span>
+<span>195 assigned</span>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline">Cohort Completion</span>
+<span class="text-secondary font-semibold font-code-md">68% avg</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low/60 flex items-center justify-between gap-space-sm mt-auto">
+<button class="flex-1 h-9 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">query_stats</span>
+<span>View stats</span>
+</button>
+<button class="flex-1 h-9 rounded-lg bg-primary font-label-sm text-label-sm text-on-primary hover:bg-surface-tint transition-colors flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Assign</span>
+</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-secondary-container/30 text-secondary font-label-sm text-label-sm font-semibold">
+                Guided Lab
+              </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Introductory
+              </span>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Power Supply Voltage Rail &amp; Multimeter Testing
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Bench probe operations testing +12V, +5V, and +3.3V tolerance envelopes with active dummy loads and continuity beeps.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs font-code-md text-code-md text-on-surface-variant pt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>25 mins</span>
+<span class="text-outline/40">•</span>
+<span>2 multimeter scenarios</span>
+<span class="text-outline/40">•</span>
+<span>248 assigned</span>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline">Cohort Completion</span>
+<span class="text-secondary font-semibold font-code-md">91% avg</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 91%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low/60 flex items-center justify-between gap-space-sm mt-auto">
+<button class="flex-1 h-9 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">query_stats</span>
+<span>View stats</span>
+</button>
+<button class="flex-1 h-9 rounded-lg bg-primary font-label-sm text-label-sm text-on-primary hover:bg-surface-tint transition-colors flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Assign</span>
+</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+                Interactive Case
+              </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+                Required
+              </span>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              Cyber Hygiene &amp; Credential Safeguarding
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Incident response training focusing on spear phishing simulations, token tampering recognition, and MFA setup.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs font-code-md text-code-md text-on-surface-variant pt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>20 mins</span>
+<span class="text-outline/40">•</span>
+<span>Security compliance</span>
+<span class="text-outline/40">•</span>
+<span>248 assigned</span>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline">Cohort Completion</span>
+<span class="text-secondary font-semibold font-code-md">95% avg</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 95%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low/60 flex items-center justify-between gap-space-sm mt-auto">
+<button class="flex-1 h-9 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">query_stats</span>
+<span>View stats</span>
+</button>
+<button class="flex-1 h-9 rounded-lg bg-primary font-label-sm text-label-sm text-on-primary hover:bg-surface-tint transition-colors flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Assign</span>
+</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between overflow-hidden group">
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary font-label-sm text-label-sm font-semibold">
+                Simulation
+              </span>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+                Advanced
+              </span>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs">
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+              OS Kernel Panic &amp; System Log Analysis
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Interactive terminal debugging of crash dumps, reading /var/log/syslog, and identifying corrupted driver binaries.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs font-code-md text-code-md text-on-surface-variant pt-space-xs">
+<span class="material-symbols-outlined text-[16px] text-outline">schedule</span>
+<span>60 mins</span>
+<span class="text-outline/40">•</span>
+<span>Live terminal sandbox</span>
+<span class="text-outline/40">•</span>
+<span>140 assigned</span>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-outline">Cohort Completion</span>
+<span class="text-secondary font-semibold font-code-md">56% avg</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 56%;"></div>
+</div>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-low/60 flex items-center justify-between gap-space-sm mt-auto">
+<button class="flex-1 h-9 rounded-lg bg-surface-container-lowest font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors shadow-sm flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">query_stats</span>
+<span>View stats</span>
+</button>
+<button class="flex-1 h-9 rounded-lg bg-primary font-label-sm text-label-sm text-on-primary hover:bg-surface-tint transition-colors flex items-center justify-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">person_add</span>
+<span>Assign</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ASSIGN ACTIVITY MODAL (Open Overlay State) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/40 backdrop-blur-sm transition-all overflow-y-auto">
+<div class="w-full max-w-2xl bg-surface-container-lowest rounded-2xl shadow-[0_20px_50px_rgba(18,26,52,0.18)] flex flex-col my-auto overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<!-- Modal Header -->
+<div class="px-space-lg pt-space-lg pb-space-md flex items-start justify-between gap-space-md bg-surface-container-lowest">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Module Dispatch</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Assign Activity</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Assign <strong class="text-on-surface">"Hardware Troubleshooting: Dead Workstation"</strong> to individual learners or cohorts.
+          </p>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-outline hover:text-on-surface hover:bg-surface-container transition-colors shrink-0" title="Close modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Action Search & Quick Select Bar -->
+<div class="px-space-lg pb-space-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined text-outline absolute left-3 top-2.5 text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search learners by name, email or ID..." type="text"/>
+</div>
+<button class="h-9 px-space-md rounded-lg bg-surface-container font-label-sm text-label-sm text-primary font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5 shrink-0" type="button">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Select whole cohort</span>
+</button>
+</div>
+<!-- Learner List Counter & Filters -->
+<div class="px-space-lg py-2 bg-surface-container-low/70 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Cohort 2025 - Section A</span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-code-md text-[11px] font-semibold">
+            12 selected
+          </span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:underline" type="button">Select None</button>
+</div>
+<!-- Scrollable Learner Selection List -->
+<div class="max-h-64 overflow-y-auto px-space-lg divide-y divide-surface-container-low">
+<!-- Learner Item 1 -->
+<label class="flex items-center justify-between py-2.5 cursor-pointer hover:bg-surface-container-low/50 px-2 rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Lerato Khumalo</span>
+<span class="font-code-md text-code-md text-outline">(STU-8821)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">l.khumalo@nudle-academy.ac.za</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold shrink-0">
+            Active
+          </span>
+</label>
+<!-- Learner Item 2 -->
+<label class="flex items-center justify-between py-2.5 cursor-pointer hover:bg-surface-container-low/50 px-2 rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Thabo Mthembu</span>
+<span class="font-code-md text-code-md text-outline">(STU-8822)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">t.mthembu@nudle-academy.ac.za</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold shrink-0">
+            Active
+          </span>
+</label>
+<!-- Learner Item 3 -->
+<label class="flex items-center justify-between py-2.5 cursor-pointer hover:bg-surface-container-low/50 px-2 rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Sipho Ndlovu</span>
+<span class="font-code-md text-code-md text-outline">(STU-8823)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">s.ndlovu@nudle-academy.ac.za</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-outline font-label-sm text-label-sm font-semibold shrink-0">
+            Stalled
+          </span>
+</label>
+<!-- Learner Item 4 -->
+<label class="flex items-center justify-between py-2.5 cursor-pointer hover:bg-surface-container-low/50 px-2 rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Zanele Khoza</span>
+<span class="font-code-md text-code-md text-outline">(STU-8824)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">z.khoza@nudle-academy.ac.za</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container/40 text-secondary font-label-sm text-label-sm font-semibold shrink-0">
+            Active
+          </span>
+</label>
+<!-- Learner Item 5 (Unchecked) -->
+<label class="flex items-center justify-between py-2.5 cursor-pointer hover:bg-surface-container-low/50 px-2 rounded-lg transition-colors group opacity-60">
+<div class="flex items-center gap-space-md min-w-0">
+<input class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Brandon Pillay</span>
+<span class="font-code-md text-code-md text-outline">(STU-8825)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">b.pillay@nudle-academy.ac.za</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container-high text-outline font-label-sm text-label-sm font-semibold shrink-0">
+            Inactive
+          </span>
+</label>
+<!-- Learner Item 6 -->
+<label class="flex items-center justify-between py-2.5 cursor-pointer hover:bg-surface-container-low/50 px-2 rounded-lg transition-colors group">
+<div class="flex items-center gap-space-md min-w-0">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate group-hover:text-primary transition-colors">Kagiso Dlamini</span>
+<span class="font-code-md text-code-md text-outline">(STU-8826)</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">k.dlamini@nudle-academy.ac.za</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold shrink-0">
+            Needs Attention
+          </span>
+</label>
+</div>
+<!-- Configuration Options Section -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-col gap-space-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Due Date Picker -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">calendar_today</span>
+<span>Due Date &amp; Cutoff</span>
+</label>
+<div class="relative">
+<input class="w-full h-10 px-3 bg-surface-container-lowest rounded-lg font-code-md text-code-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 shadow-sm" type="text" value="March 07, 2025 — 23:59 SAST"/>
+<span class="material-symbols-outlined text-outline absolute right-3 top-2.5 text-[18px] pointer-events-none">edit_calendar</span>
+</div>
+</div>
+<!-- Passing Score Threshold -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">grade</span>
+<span>Passing Score Threshold</span>
+</label>
+<div class="relative">
+<select class="w-full h-10 px-3 pr-8 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 appearance-none shadow-sm cursor-pointer">
+<option selected="">75% (Standard Certification)</option>
+<option>80% (Advanced Honors)</option>
+<option>90% (Zero Fault Tolerance)</option>
+<option>60% (Diagnostic Only)</option>
+</select>
+<span class="material-symbols-outlined text-outline absolute right-3 top-2.5 text-[18px] pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<!-- Notification Toggle -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-primary accent-primary cursor-pointer" id="email-notif" type="checkbox"/>
+<label class="font-label-md text-label-md text-on-surface cursor-pointer select-none" for="email-notif">
+              Immediate Email &amp; Console Notification
+            </label>
+</div>
+<span class="font-code-md text-[11px] text-outline">SMTP gateway active</span>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest flex items-center justify-end gap-space-sm">
+<button class="h-10 px-space-md rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" type="button">
+          Cancel
+        </button>
+<button class="h-10 px-space-lg rounded-lg bg-primary font-label-md text-label-md text-on-primary hover:bg-surface-tint shadow-[0_2px_8px_rgba(3,51,192,0.3)] transition-all flex items-center gap-space-xs font-semibold" type="button">
+<span>Assign to 12 learners</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>
