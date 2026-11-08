@@ -7,11 +7,11 @@
 | Phase 1: Auth.js login + route protection | Done | Auth.js v5 (5.0.0-beta.32), credentials + bcryptjs, JWT (12h) carrying id + role. `src/proxy.ts` (Next 16 name for middleware) redirects by role; layouts and pages re-check the role on the server and reload the user from the DB so deactivation takes effect immediately. |
 | Phase 1: Login page | Done | Matches /design layout. Loading spinner, inline Zod errors, error banner, success toast, password visibility toggle. Omitted design items that would be fake: "Forgot password", "Keep me signed in", SSO/FERPA claims. |
 | Phase 1: Idempotent seed | Done | `npm run db:seed`. 1 admin, 12 learners (2025-A / 2025-B, 2 inactive), 1 activity, 12 assignments (5 completed, 3 in progress, 4 not started; 4 overdue, 3 of them for active learners), 8 attempts, 26 audit entries. Verified: re-running creates nothing new. Decision histories are hand-authored for now and will be regenerated through the real engine in Phase 3. |
-| Phase 2: Admin dashboard (KPIs, charts, feed, needs attention) | Not started | |
-| Phase 2: Learners list (search, filters, pagination, drawer, deactivate) | Not started | |
-| Phase 2: Learner detail | Not started | |
-| Phase 2: Activities (create, assign) | Not started | |
-| Phase 2: stats.service tests | Not started | |
+| Phase 2: Admin dashboard (KPIs, charts, feed, needs attention) | Done | `/api/stats` -> `stats.service.getDashboard()`. TanStack Query refetches every 10s. 30-day completions line, completion-rate-per-activity bars (each with a screen-reader table), audit feed (sign-ins excluded as noise), overdue list. Quick actions: Add learner (`/admin/learners?new=1` opens the drawer) and Assign activity (Activities page). |
+| Phase 2: Learners list (search, filters, pagination, drawer, deactivate) | Done | Server-side search (name/email, case-insensitive), status and cohort filters, 10 per page. Add/edit side drawer with shared Zod schema; duplicate email returns `fields.email`. Deactivate/reactivate via confirm dialog (soft delete). Table >= 768px, cards below. New learners get an admin-set temporary password (there is no email/invite system). |
+| Phase 2: Learner detail | Done | Profile, summary stats, score-over-time chart, assignments with expandable attempts showing every decision. The hidden fault is shown only for completed attempts (`attempt-view.ts`). |
+| Phase 2: Activities (create, assign) | Done | Cards with assigned/completed/avg score/completion. Create dialog (scenario must exist in the catalog). Assign dialog: individual learners and/or a whole cohort, optional due date (end of that day, UTC). `createMany(skipDuplicates)` skips existing assignments; toast reports added/skipped. Only ACTIVE learners can be assigned. The assign picker loads up to 100 active learners. |
+| Phase 2: stats.service tests | Done | `tests/unit/stats.service.test.ts`: pure rate and bucketing tests (zero assignments returns null) and DB tests on tagged fixtures for each metric definition and the overdue list. Plus `admin.services.test.ts`: duplicate email field error, audit on create, soft delete, search, skip-existing assignment. |
 | Phase 3: Simulation engine + tests | Not started | |
 | Phase 3: simulation.service + tests | Not started | |
 | Phase 3: Simulation workbench UI | Not started | |
@@ -34,3 +34,8 @@
 - **Accessibility over the design:** success/warning text uses darker tokens (`#15803D`, `#B45309`, both 5.0:1 on white) because the spec colours are only ~3.2:1. Input borders use `#8A91A5` (3.15:1) to meet the non-text contrast rule. Buttons and inputs are 40px tall.
 - **Seed emails use the reserved `.test` TLD** so no real address can receive mail.
 - **Unit tests run against the Neon database** for services (added from Phase 2). Each test creates and cleans up its own uniquely named rows.
+- **Admin data views are client components using TanStack Query against `/api/*`.** Server pages only check the role. This keeps the layer rule (UI -> API -> services) and gives every view the same loading, error-with-retry and empty states.
+- **API responses use ISO date strings** in their DTO types, so client types match what JSON actually carries.
+- **Completions chart counts all completions** (including learners deactivated since), because those completions happened. The KPI and per-activity rates follow the active-learner definitions exactly.
+- **Bulk assignment writes one audit entry per assign action** (with added/skipped counts) rather than one per learner.
+- **Known gap until Phase 8:** the "Audit log" nav item 404s until the audit page is built (Phase 8.2). The learner "My progress" link 404s until Phase 4.

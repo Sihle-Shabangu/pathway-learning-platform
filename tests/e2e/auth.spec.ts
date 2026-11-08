@@ -31,7 +31,7 @@ test.describe("login and route protection", () => {
     await page.getByLabel("Password", { exact: true }).fill(PASSWORD);
     await page.getByRole("button", { name: /sign in to pathway/i }).click();
     await expect(page).toHaveURL(/\/admin$/);
-    await expect(page.getByRole("heading", { name: /welcome, thandi naidoo/i })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /welcome back, thandi/i })).toBeVisible();
 
     await page.goto("/learner");
     await expect(page).toHaveURL(/\/admin$/);
