@@ -136,6 +136,8 @@ export async function listLearners(query: ListLearnersQuery): Promise<LearnerLis
 
 export async function createLearner(actorId: string, input: CreateLearnerInput): Promise<{ id: string }> {
   await assertEmailFree(input.email);
+  // Hash before opening the transaction: bcrypt is deliberately slow and shouldn't hold a DB transaction open.
+  const passwordHash = await bcrypt.hash(input.password, 10);
   try {
     const learner = await prisma.$transaction(async (tx) => {
       const created = await tx.user.create({
@@ -145,7 +147,7 @@ export async function createLearner(actorId: string, input: CreateLearnerInput):
           cohort: input.cohort,
           role: "LEARNER",
           status: "ACTIVE",
-          passwordHash: await bcrypt.hash(input.password, 10),
+          passwordHash,
         },
       });
       await recordAudit(

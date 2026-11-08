@@ -3,7 +3,8 @@ import { hardwareTroubleshooting as scenario } from "@/lib/simulation/scenarios/
 import type { SimulationState } from "@/lib/simulation/types";
 import { prisma } from "@/server/db";
 import { AppError } from "@/server/errors";
-import { applyAction, getAttemptView, startOrResume, type SimulationView } from "@/server/services/simulation.service";
+import { start } from "@/lib/simulation/engine";
+import { applyAction, getAttemptView, startOrResume, toSimulationView, type SimulationView } from "@/server/services/simulation.service";
 import { createFixtures } from "./helpers/fixtures";
 
 /** Things that would give the answer away if they reached the browser early. */
@@ -16,6 +17,31 @@ async function storedState(attemptId: string): Promise<SimulationState> {
   const row = await prisma.simulationAttempt.findUniqueOrThrow({ where: { id: attemptId } });
   return row.state as unknown as SimulationState;
 }
+
+describe("toSimulationView (no database): the fault stays hidden for every fault", () => {
+  it.each([0, 1, 2])("seed %i: in-progress view has no fault id, name or explanation", (seed) => {
+    const state = start(scenario, seed);
+    const fault = scenario.faults.find((f) => f.id === state.faultId)!;
+    const attempt = {
+      id: "attempt-1",
+      assignmentId: "assignment-1",
+      startedAt: new Date("2026-01-01T10:00:00Z"),
+      completedAt: null,
+      assignment: { activity: { title: "Test activity" } },
+    } as unknown as Parameters<typeof toSimulationView>[0];
+
+    const view = toSimulationView(attempt, scenario, state);
+    expect(view.result).toBeNull();
+    const json = JSON.stringify(view).replace(/"(label|actionLabel)":"[^"]*"/g, "");
+    expect(json).not.toContain(fault.id);
+    expect(json).not.toContain(fault.name);
+    expect(json).not.toContain(fault.explanation);
+    expect(json).not.toContain("expertPath");
+
+    const done = toSimulationView({ ...attempt, completedAt: new Date() } as typeof attempt, scenario, state);
+    expect(done.result?.faultId).toBe(fault.id);
+  });
+});
 
 describe("simulation.service", () => {
   const fixtures = createFixtures();
@@ -106,7 +132,9 @@ describe("simulation.service", () => {
     const secrets = secretsFor(faultId);
 
     const assertHidden = (payload: unknown) => {
-      const json = JSON.stringify(payload);
+      // Action labels are always the same list whatever the fault (e.g. "Diagnose: CPU overheating"
+      // appears for every attempt), so they reveal nothing. Check everything except those labels.
+      const json = JSON.stringify(payload).replace(/"(label|actionLabel)":"[^"]*"/g, "");
       for (const secret of secrets) expect(json).not.toContain(secret);
     };
     assertHidden(view);

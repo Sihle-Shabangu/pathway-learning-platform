@@ -2,16 +2,18 @@
 
 import type { KeyboardEvent, ReactNode } from "react";
 
+// Each name STARTS with the text drawn on that part (BIOS, SPK, GND, PSU, AC…) so speech-input users
+// can say what they see ("click BIOS") and it matches the accessible name (WCAG 2.5.3, axe label-content-name-mismatch).
 export const COMPONENT_LABELS: Record<string, string> = {
-  monitor: "Monitor",
+  monitor: "BIOS monitor",
   power: "Power button and LED",
-  speaker: "Motherboard speaker",
+  speaker: "SPK motherboard speaker",
   cpu: "CPU and heatsink",
   ram: "RAM modules",
   motherboard: "Motherboard",
-  psu: "Power supply (PSU)",
-  case: "Chassis ground point",
-  cable: "Power cable and outlet",
+  psu: "PSU power supply",
+  case: "GND chassis ground point",
+  cable: "AC power cable and outlet",
 };
 
 type PartProps = {
@@ -151,7 +153,7 @@ export function PcTower({
         <rect x={176} y={278} width={160} height={60} rx={4} fill={FILL} stroke={STROKE} strokeWidth={2} />
         <circle cx={210} cy={308} r={20} fill="none" stroke="#a9b6d3" strokeWidth={1.5} />
         <text x={250} y={312} {...LABEL}>
-          PSU 650W
+          PSU
         </text>
       </Part>
 

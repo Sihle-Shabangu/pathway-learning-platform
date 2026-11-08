@@ -10,6 +10,8 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   timeout: 60_000,
   reporter: [["list"]],
+  // Removes the learners and records the tests create, so demo data stays clean.
+  globalTeardown: "./tests/e2e/global-teardown.ts",
   use: {
     baseURL: `http://localhost:${PORT}`,
     trace: "retain-on-failure",

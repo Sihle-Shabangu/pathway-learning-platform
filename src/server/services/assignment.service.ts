@@ -47,6 +47,14 @@ export async function assignActivity(actorId: string, input: AssignInput): Promi
   const dueDate = input.dueDate ? endOfDayUtc(input.dueDate) : null;
 
   return prisma.$transaction(async (tx) => {
+    // Who doesn't have it yet (recorded in the audit entry).
+    const existing = await tx.assignment.findMany({
+      where: { activityId: activity.id, learnerId: { in: learners.map((learner) => learner.id) } },
+      select: { learnerId: true },
+    });
+    const alreadyAssigned = new Set(existing.map((row) => row.learnerId));
+    const newLearnerIds = learners.map((learner) => learner.id).filter((id) => !alreadyAssigned.has(id));
+
     // skipDuplicates relies on the unique (activityId, learnerId) index to skip existing assignments.
     const { count } = await tx.assignment.createMany({
       data: learners.map((learner) => ({ activityId: activity.id, learnerId: learner.id, dueDate })),
@@ -63,6 +71,7 @@ export async function assignActivity(actorId: string, input: AssignInput): Promi
           title: activity.title,
           cohort: input.cohort ?? null,
           dueDate: input.dueDate ?? null,
+          learnerIds: newLearnerIds, // who actually received it, for the audit trail
           ...result,
         },
       },

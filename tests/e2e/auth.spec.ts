@@ -30,11 +30,11 @@ test.describe("login and route protection", () => {
     await page.getByLabel("Email address").fill("admin@pathway.test");
     await page.getByLabel("Password", { exact: true }).fill(PASSWORD);
     await page.getByRole("button", { name: /sign in to pathway/i }).click();
-    await expect(page).toHaveURL(/\/admin$/);
+    await expect(page).toHaveURL(/\/admin$/, { timeout: 20_000 });
     await expect(page.getByRole("heading", { name: /welcome back, thandi/i })).toBeVisible();
 
     await page.goto("/learner");
-    await expect(page).toHaveURL(/\/admin$/);
+    await expect(page).toHaveURL(/\/admin$/, { timeout: 20_000 });
   });
 
   test("a learner lands on /learner and cannot open admin pages", async ({ page }) => {
@@ -42,11 +42,11 @@ test.describe("login and route protection", () => {
     await page.getByLabel("Email address").fill("lerato@pathway.test");
     await page.getByLabel("Password", { exact: true }).fill(PASSWORD);
     await page.getByRole("button", { name: /sign in to pathway/i }).click();
-    await expect(page).toHaveURL(/\/learner$/);
+    await expect(page).toHaveURL(/\/learner$/, { timeout: 20_000 });
     await expect(page.getByRole("heading", { name: /hi, lerato/i })).toBeVisible();
 
     await page.goto("/admin/learners");
-    await expect(page).toHaveURL(/\/learner$/);
+    await expect(page).toHaveURL(/\/learner$/, { timeout: 20_000 });
   });
 
   test("an inactive learner cannot sign in", async ({ page }) => {

@@ -8,6 +8,8 @@ export default defineConfig({
     setupFiles: ["dotenv/config"],
     // Service tests share one Neon database; run files one at a time to keep them independent.
     fileParallelism: false,
-    testTimeout: 30_000,
+    // The database is a remote Neon instance; allow for network latency spikes.
+    testTimeout: 60_000,
+    hookTimeout: 60_000,
   },
 });

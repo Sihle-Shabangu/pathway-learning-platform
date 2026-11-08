@@ -205,7 +205,7 @@ export async function applyAction(learner: Learner, attemptId: string, input: Ap
   const completed = result.state.status === "COMPLETED";
   const now = new Date();
 
-  const saved = await prisma.$transaction(async (tx) => {
+  await prisma.$transaction(async (tx) => {
     // Conditional update: only succeeds if nobody else saved this step first (atomic duplicate guard).
     const updated = await tx.simulationAttempt.updateMany({
       where: { id: attempt.id, completedAt: null, state: { path: ["step"], equals: input.expectedStep } },
@@ -246,12 +246,10 @@ export async function applyAction(learner: Learner, attemptId: string, input: Ap
     }
 
     await tx.user.update({ where: { id: learner.id }, data: { lastActiveAt: now } });
-    return tx.simulationAttempt.findUniqueOrThrow({
-      where: { id: attempt.id },
-      include: { assignment: { include: { activity: true } } },
-    });
   });
 
+  // We already know exactly what was saved, so build the response without re-reading the row.
+  const saved = { ...attempt, completedAt: completed ? now : null, score: result.state.score };
   return {
     view: toSimulationView(saved, scenario, result.state),
     feedback: result.feedback,
