@@ -62,23 +62,26 @@ the design and give comfortable touch targets.
 
 ## 3-click rule
 
-Clicks are counted from the role's landing page after sign-in. Verified against the running app (see the
-Playwright tests named in the last column, which perform the same journeys).
+**What counts:** clicks from the role's landing page (after sign-in) to the screen or form where the task is done.
+Typing into a form and pressing its submit button are the task itself and are not counted.
 
-| Role | Primary task | Path | Clicks |
+Every row was **verified against the running app** with a Playwright script that performs the journey, counts the
+clicks and checks it lands on the right screen (run on 8 November 2026).
+
+| Role | Primary task | Path from the landing page | Clicks |
 | --- | --- | --- | --- |
-| Admin | See key metrics | Dashboard (landing) | 0 |
-| Admin | Add a learner | Dashboard → **Add learner** (drawer opens) → **Add learner** | 2 |
-| Admin | Assign an activity | Dashboard → **Assign activity** → **Assign** on the card → **Assign to N learners** | 3 |
-| Admin | Review a learner's attempt | Dashboard → **Learners** → learner name → **Show attempt** | 3 |
-| Admin | Act on an overdue learner | Dashboard → **View** in Needs attention | 1 |
-| Admin | Deactivate a learner | **Learners** → row menu → **Deactivate** → confirm | 4 (3 to reach the action, then a confirmation) |
-| Admin | Check the audit log | **Audit log** | 1 |
-| Learner | Start or resume a simulation | Home → **Resume simulation** (or **Start** on the card) | 1 |
-| Learner | Review a finished attempt | Home → **Review** | 1 |
+| Admin | See key metrics | Dashboard is the landing page | 0 |
+| Admin | Act on an overdue learner | **View** in Needs attention → learner detail | 1 |
+| Admin | Add a learner | **Add learner** → drawer opens on the Learners page | 1 |
+| Admin | Assign an activity | **Assign activity** → **Assign** on the activity card → dialog | 2 |
+| Admin | Create an activity | **Activities** → **Create activity** → dialog | 2 |
+| Admin | Review a learner's attempt | **Learners** → learner name → **Show attempt** | 3 |
+| Admin | Deactivate a learner | **Learners** → row menu → **Deactivate** → confirmation dialog | 3 |
+| Learner | Start or resume the simulation | **Resume simulation** (or **Start** on the activity card) | 1 |
+| Learner | Review a finished attempt | **Review** on the activity card | 1 |
 | Learner | See progress over time | **My progress** | 1 |
 
-Deactivation deliberately adds a confirmation dialog on top of three clicks: it is a destructive action.
+Deactivation adds a confirmation step on purpose, because it removes the learner's access.
 
 ## Responsive approach
 
