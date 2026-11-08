@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { ArrowLeft, Calendar, CheckCircle2, ChevronDown, Mail, Pencil, PlayCircle, Target, Users } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, ChevronDown, Download, Mail, Pencil, PlayCircle, Target, Users } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { AttemptDecisions } from "@/components/attempt-decisions";
@@ -166,6 +166,12 @@ export function LearnerDetail({ learnerId }: { learnerId: string }) {
             </div>
           </div>
           <div className="flex flex-wrap gap-2">
+            <Button asChild variant="outline">
+              <a href={`/api/reports/learners/${profile.id}`} download>
+                <Download className="size-4" aria-hidden="true" />
+                Export report (CSV)
+              </a>
+            </Button>
             <Button
               variant="outline"
               onClick={() => {

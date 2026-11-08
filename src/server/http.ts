@@ -17,3 +17,14 @@ export function searchParamsToObject(params: URLSearchParams): Record<string, st
   });
   return result;
 }
+
+/** A CSV download response. The BOM makes Excel read the file as UTF-8 (names with accents stay intact). */
+export function csvResponse(file: { filename: string; content: string }): Response {
+  return new Response(`﻿${file.content}`, {
+    headers: {
+      "Content-Type": "text/csv; charset=utf-8",
+      "Content-Disposition": `attachment; filename="${file.filename}"`,
+      "Cache-Control": "no-store",
+    },
+  });
+}

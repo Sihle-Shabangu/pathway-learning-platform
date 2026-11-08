@@ -1,7 +1,7 @@
 "use client";
 
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { ChevronLeft, ChevronRight, MoreHorizontal, Search, UserPlus, Users } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download, MoreHorizontal, Search, UserPlus, Users } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -126,10 +126,18 @@ export function LearnersManager() {
         title="Learners"
         description="Search, add and manage learner accounts."
         actions={
-          <Button onClick={openAdd}>
-            <UserPlus className="size-4" aria-hidden="true" />
-            Add learner
-          </Button>
+          <>
+            <Button asChild variant="outline">
+              <a href="/api/reports/learners" download>
+                <Download className="size-4" aria-hidden="true" />
+                Export all results (CSV)
+              </a>
+            </Button>
+            <Button onClick={openAdd}>
+              <UserPlus className="size-4" aria-hidden="true" />
+              Add learner
+            </Button>
+          </>
         }
       />
 
