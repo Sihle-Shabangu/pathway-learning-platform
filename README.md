@@ -5,7 +5,7 @@ assign activities, and follow progress on a live dashboard. **Learners** work th
 troubleshooting simulation, *Diagnose the dead workstation*, where every decision is scored and explained, then
 review their results and progress over time.
 
-**Live URL:** _to be added after deployment_
+**Live URL:** https://pathway-learning-platform-tau.vercel.app (demo accounts below)
 
 Built for the Nudle (Pty) Ltd Full Stack Developer Internship assessment.
 
@@ -173,6 +173,9 @@ npm run lint          # ESLint
 npm test              # Vitest: 82 tests (engine, services, metrics, CSV, formatting)
 npm run test:e2e      # Playwright: 22 tests (needs a seeded database; starts the dev server if needed)
 npm run db:clean-tests  # remove any data left by interrupted test runs
+
+# Run the end-to-end suite against a deployed site instead of a local server:
+E2E_BASE_URL=https://pathway-learning-platform-tau.vercel.app npm run test:e2e
 ```
 
 - **Unit tests** cover the engine (written before it), the scenario catalogue and the error mapping. **Service
