@@ -16,9 +16,9 @@
 | Phase 3: simulation.service + tests | Done | Server-generated seed (`crypto.randomInt`), start/resume, state saved after every action, 409 on stale `expectedStep` enforced atomically (conditional `updateMany` on the stored step, so two simultaneous submissions produce exactly one winner; tested). Completion saves the score and marks the assignment COMPLETED. `toSimulationView` is the single place that reveals the fault, only when complete. 9 DB tests incl. cross-learner 404 and no fault before completion. |
 | Phase 3: Simulation workbench UI | Done | Dark workbench: top bar (title, step, live score, Exit and save), clickable SVG tower (each part is a focusable role=button; Enter/Space highlights related actions), symptoms, actions grouped Safety/Investigate/Repair/Diagnose with lock icon + hint, findings log, aria-live result banner. Tabs below 1024px. Verified by playing a full attempt in the browser. |
 | Phase 3: Results screen | Done | Score gauge, outcome band, hidden fault + explanation, decision-by-decision breakdown, efficiency bonus, expert path with "you did this / missed". In-progress attempts show a Resume link instead (no early reveal). |
-| Phase 4: Learner dashboard | Not started | |
-| Phase 4: My Progress | Not started | |
-| Phase 4: Cross-learner access test | Not started | |
+| Phase 4: Learner dashboard | Done | `GET /api/assignments/mine` -> `learner-portal.service`. Greeting, continue card (most recently started in-progress attempt, with actions taken and current score), progress ring, activity cards with status + overdue badge, due date and exactly one action (Start / Resume / Review). Empty and error states. |
+| Phase 4: My Progress | Done | `GET /api/stats/me`. Stat cards (completed, average, best, decision accuracy = good decisions / all decisions in completed attempts), score trend chart with table alternative, attempt history (table / cards) linking to results or resume. Design items with no data behind them (lab hours, competency rubric, transcript download) were left out rather than faked. |
+| Phase 4: Cross-learner access test | Done | `tests/e2e/access.spec.ts` over real HTTP: Lerato gets 404 reading or acting on Thabo's attempt (no fault or decisions in the body); learner gets 403 on admin APIs; admin gets 403 on learner APIs; signed out gets 401 JSON. Also covered at service level in `simulation.service.test.ts`. |
 | Phase 5: Deploy readiness | Not started | |
 | Phase 6: Hardening (states, mobile, a11y, 404/500) | Not started | |
 | Phase 6: Playwright e2e (learner completes simulation) | Not started | |
@@ -38,10 +38,12 @@
 - **API responses use ISO date strings** in their DTO types, so client types match what JSON actually carries.
 - **Completions chart counts all completions** (including learners deactivated since), because those completions happened. The KPI and per-activity rates follow the active-learner definitions exactly.
 - **Bulk assignment writes one audit entry per assign action** (with added/skipped counts) rather than one per learner.
-- **Known gap until Phase 8:** the "Audit log" nav item 404s until the audit page is built (Phase 8.2). The learner "My progress" link 404s until Phase 4.
+- **Known gap until Phase 8:** the "Audit log" nav item 404s until the audit page is built (Phase 8.2). The learner "My progress" link was fixed in Phase 4.
 - **Seed now replays action lists through the real engine** (Phase 1 used hand-written histories). Demo attempts are matched by their fixed seed and refreshed in place on re-seed; assignments with real attempts are skipped.
 - **The scenario data never reaches the browser bundle.** Client components import `scenarios/catalog.ts` (keys, titles, fault names only); a unit test keeps it in sync with the scenario file.
 - **Every simulation action writes an audit entry** (`simulation.action`). The dashboard feed hides these as noise; the audit page will show them.
 - **Locked actions reveal a little information** (e.g. "Reseat the RAM" stays locked if listening finds no beep code). This is intentional and realistic: no beep code means memory isn't the suspect.
 - **Efficiency bonus follows the spec literally:** solved in 6 actions or fewer earns +10, even if those actions included penalties (seeded Ethan: 67 + 10 = 77).
 - **Flaky test run observed once:** one full `npm test` run had 1 failure in `admin.services` and a setup failure in `simulation.service`. The next 4 full runs all passed 68/68. Likely a transient Neon connection error, but I didn't capture the message. Recorded rather than hidden with retries.
+- **Learner read endpoints live at `/api/assignments/mine` and `/api/stats/me`**, keeping the spec's API folders. Every query in `learner-portal.service` is scoped by the signed-in learner's id.
+- **E2E tests don't import Prisma:** Playwright loads tests as CommonJS and the Prisma 7 client is ESM-only, so e2e tests get their data through the app's own API as a real user would.
