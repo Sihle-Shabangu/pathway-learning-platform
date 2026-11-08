@@ -4,7 +4,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { ChevronLeft, ChevronRight, Download, MoreHorizontal, Search, UserPlus, Users } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { EmptyState, ErrorState, PageHeader } from "@/components/states";
 import { StatusBadge } from "@/components/status-badge";
 import { Button } from "@/components/ui/button";
@@ -23,22 +23,13 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { apiFetch, errorMessage } from "@/lib/api-client";
 import { formatRelative, formatScore, initials } from "@/lib/format";
+import { useDebouncedValue } from "@/lib/use-debounced-value";
 import type { LearnerList, LearnerRow } from "@/server/services/learner.service";
 import { LearnerFormSheet, type EditableLearner } from "./learner-form-sheet";
 import { LearnerStatusDialog, type StatusTarget } from "./learner-status-dialog";
 
 const PAGE_SIZE = 10;
 const ALL = "all";
-
-/** Returns `value` only after it has stopped changing for `delay` ms (so we don't query on every keystroke). */
-function useDebouncedValue<T>(value: T, delay = 300): T {
-  const [debounced, setDebounced] = useState(value);
-  useEffect(() => {
-    const timer = setTimeout(() => setDebounced(value), delay);
-    return () => clearTimeout(timer);
-  }, [value, delay]);
-  return debounced;
-}
 
 function RowActions({
   learner,

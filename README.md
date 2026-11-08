@@ -147,6 +147,7 @@ All endpoints return JSON. Errors use `{ error: { code, message, fields? } }` wi
 | `POST` | `/api/simulation/start` | Learner | Start or resume the attempt for one of your assignments |
 | `GET` | `/api/simulation/attempts/:attemptId` | Learner (owner) | An attempt; fault revealed only when complete |
 | `POST` | `/api/simulation/attempts/:attemptId/actions` | Learner (owner) | Take an action: `{ actionId, expectedStep }` |
+| `GET` | `/api/audit` | Admin | Audit log, newest first: `action`, `actor`, `from`, `to`, `page`, `pageSize` |
 | `GET` | `/api/reports/learners` | Admin | CSV download: every learner's results, one row per assignment |
 | `GET` | `/api/reports/learners/:id` | Admin | CSV download: one learner's report, one row per attempt |
 

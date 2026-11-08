@@ -35,6 +35,10 @@ test.describe("accessibility (axe, WCAG 2.1 AA)", () => {
     await page.goto("/admin/activities");
     await page.getByRole("button", { name: "Assign" }).first().waitFor();
     await expectNoSeriousViolations(page, "activities");
+
+    await page.goto("/admin/audit");
+    await page.getByText(/\d+ entr(y|ies) · page/).waitFor();
+    await expectNoSeriousViolations(page, "audit log");
   });
 
   test("learner pages", async ({ page }) => {

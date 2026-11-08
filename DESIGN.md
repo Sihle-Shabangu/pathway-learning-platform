@@ -77,6 +77,8 @@ clicks and checks it lands on the right screen (run on 8 November 2026).
 | Admin | Create an activity | **Activities** → **Create activity** → dialog | 2 |
 | Admin | Review a learner's attempt | **Learners** → learner name → **Show attempt** | 3 |
 | Admin | Deactivate a learner | **Learners** → row menu → **Deactivate** → confirmation dialog | 3 |
+| Admin | Check the audit log | **Audit log** | 1 |
+| Admin | Export all results as CSV | **Learners** → **Export all results (CSV)** | 2 |
 | Learner | Start or resume the simulation | **Resume simulation** (or **Start** on the activity card) | 1 |
 | Learner | Review a finished attempt | **Review** on the activity card | 1 |
 | Learner | See progress over time | **My progress** | 1 |

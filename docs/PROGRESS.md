@@ -24,7 +24,7 @@
 | Phase 6: Playwright e2e (learner completes simulation) | Done | `tests/e2e/simulation-flow.spec.ts`: admin API creates a fresh learner and assigns the activity; the learner signs in, reads the symptoms, follows the matching expert path in the browser, sees a score >= 90; the admin learner-detail page shows the same `Final score N/100`. Global teardown (`npm run db:clean-tests`) removes test data afterwards. All 15 e2e tests pass against a production build. |
 | Phase 7: README, DESIGN, DEVELOPMENT_SUMMARY | Done | README: overview, live URL placeholder, quick start, demo accounts, stack, architecture, simulation rules, API table, metric definitions, testing, deploy, limitations. DESIGN.md: palette with measured contrast, typography, navigation, 3-click table verified by a Playwright script against the running app, responsive, accessibility, simulation UX. DEVELOPMENT_SUMMARY.md: status table, challenges, improvements, and an empty "AI assistance disclosure" heading for the author. |
 | Phase 8.1: CSV export | Done | `GET /api/reports/learners` (every learner x assignment, inactive learners included and labelled) and `GET /api/reports/learners/:id` (one row per attempt; hidden fault only for completed attempts). Buttons on the Learners page and learner detail. Pure `toCsv` with RFC 4180 quoting, CRLF, UTF-8 BOM for Excel, and CSV-injection protection (cells starting with = + - @ are prefixed with '). Unit tests for the writer; e2e tests for content, headers, 403 and 404. Exports are reads, so they are not audited. |
-| Phase 8.2: Audit log page with filters | Not started | |
+| Phase 8.2: Audit log page with filters | Done | `/admin/audit` and `GET /api/audit`: newest first, filters for action, who (name or email), and an inclusive date range (validated in the browser and on the server), 20 per page; table on desktop, cards on mobile. Shows every entry, including individual simulation steps and sign-ins that the dashboard feed hides. E2E test for filters, date validation and 403; added to the axe scan. |
 | Phase 8.3: Playwright e2e (admin adds + assigns) | Not started | |
 
 ## Decisions log
@@ -38,7 +38,7 @@
 - **API responses use ISO date strings** in their DTO types, so client types match what JSON actually carries.
 - **Completions chart counts all completions** (including learners deactivated since), because those completions happened. The KPI and per-activity rates follow the active-learner definitions exactly.
 - **Bulk assignment writes one audit entry per assign action** (with added/skipped counts) rather than one per learner.
-- **Known gap until Phase 8:** the "Audit log" nav item 404s until the audit page is built (Phase 8.2). The learner "My progress" link was fixed in Phase 4.
+- **Known gap until Phase 8:** the "Audit log" nav item 404'd until Phase 8.2, which added the page. The learner "My progress" link was fixed in Phase 4.
 - **Seed now replays action lists through the real engine** (Phase 1 used hand-written histories). Demo attempts are matched by their fixed seed and refreshed in place on re-seed; assignments with real attempts are skipped.
 - **The scenario data never reaches the browser bundle.** Client components import `scenarios/catalog.ts` (keys, titles, fault names only); a unit test keeps it in sync with the scenario file.
 - **Every simulation action writes an audit entry** (`simulation.action`). The dashboard feed hides these as noise; the audit page will show them.
