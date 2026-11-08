@@ -8,7 +8,7 @@ import { StatusBadge } from "@/components/status-badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { apiFetch, errorMessage } from "@/lib/api-client";
-import { formatDate, formatScore, pluralize } from "@/lib/format";
+import { formatDueDate, formatScore, pluralize } from "@/lib/format";
 import type { LearnerHome, MyAssignment } from "@/server/services/learner-portal.service";
 import { ProgressRing } from "./progress-ring";
 
@@ -39,7 +39,7 @@ function AssignmentCard({ assignment }: { assignment: MyAssignment }) {
             {assignment.isOverdue ? <StatusBadge status="OVERDUE" /> : null}
             <span className="inline-flex items-center gap-1">
               <CalendarClock className="size-4" aria-hidden="true" />
-              {assignment.dueDate ? `Due ${formatDate(assignment.dueDate)}` : "No due date"}
+              {assignment.dueDate ? `Due ${formatDueDate(assignment.dueDate)}` : "No due date"}
             </span>
             <span className="inline-flex items-center gap-1">
               <Clock className="size-4" aria-hidden="true" />

@@ -18,6 +18,20 @@ const dateTimeFormatter = new Intl.DateTimeFormat("en-ZA", {
   minute: "2-digit",
 });
 
+// Due dates are calendar days stored as the END of that day in UTC (e.g. 2030-12-31T23:59:59Z).
+// Formatting them in local time would show the next day east of UTC (1 Jan in South Africa),
+// so they are always formatted in UTC: the day the admin picked is the day everyone sees.
+const dueDateFormatter = new Intl.DateTimeFormat("en-ZA", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+const shortDueDateFormatter = new Intl.DateTimeFormat("en-ZA", { day: "numeric", month: "short", timeZone: "UTC" });
+
+export function formatDueDate(iso: string | null | undefined): string {
+  return iso ? dueDateFormatter.format(new Date(iso)) : "—";
+}
+
+export function formatShortDueDate(iso: string): string {
+  return shortDueDateFormatter.format(new Date(iso));
+}
+
 export function formatDate(iso: string | null | undefined): string {
   return iso ? dateFormatter.format(new Date(iso)) : "—";
 }

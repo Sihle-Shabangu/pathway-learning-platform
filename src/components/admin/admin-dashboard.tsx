@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { apiFetch, errorMessage } from "@/lib/api-client";
 import { describeAuditAction } from "@/lib/audit-text";
-import { formatPercent, formatRelative, formatShortDate, initials, pluralize } from "@/lib/format";
+import { formatPercent, formatRelative, formatShortDueDate, initials, pluralize } from "@/lib/format";
 import type { DashboardData } from "@/server/services/stats.service";
 
 function KpiCard({
@@ -281,7 +281,7 @@ export function AdminDashboard({ adminName }: { adminName: string }) {
                     <div className="min-w-0 flex-1">
                       <p className="truncate text-sm font-medium text-foreground">{item.learnerName}</p>
                       <p className="truncate text-sm text-muted-foreground">
-                        {item.activityTitle} · due {formatShortDate(item.dueDate)}
+                        {item.activityTitle} · due {formatShortDueDate(item.dueDate)}
                       </p>
                       <StatusBadge
                         status="OVERDUE"

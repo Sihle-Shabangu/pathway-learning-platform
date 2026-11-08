@@ -11,7 +11,7 @@ import { StatusBadge } from "@/components/status-badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ApiError, apiFetch, errorMessage } from "@/lib/api-client";
-import { formatDate, formatDateTime, formatPercent, formatRelative, formatScore, initials } from "@/lib/format";
+import { formatDate, formatDateTime, formatDueDate, formatPercent, formatRelative, formatScore, initials } from "@/lib/format";
 import { faultLabel } from "@/lib/simulation/scenarios/catalog";
 import { cn } from "@/lib/utils";
 import type { LearnerAssignment, LearnerDetail as LearnerDetailData } from "@/server/services/learner.service";
@@ -33,7 +33,7 @@ function AssignmentRow({ assignment }: { assignment: LearnerAssignment }) {
         <div className="min-w-0 flex-1">
           <p className="font-medium text-foreground">{assignment.activityTitle}</p>
           <p className="text-sm text-muted-foreground">
-            Assigned {formatDate(assignment.assignedAt)} · Due {formatDate(assignment.dueDate)}
+            Assigned {formatDate(assignment.assignedAt)} · Due {formatDueDate(assignment.dueDate)}
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">

@@ -170,8 +170,8 @@ Implemented in `src/server/services/stats.service.ts` and tested in `tests/unit/
 ```bash
 npm run typecheck     # Next route types + tsc --noEmit
 npm run lint          # ESLint
-npm test              # Vitest: 71 tests (engine, services, metrics, validation)
-npm run test:e2e      # Playwright: 15 tests (needs a seeded database; starts the dev server if needed)
+npm test              # Vitest: 82 tests (engine, services, metrics, CSV, formatting)
+npm run test:e2e      # Playwright: 22 tests (needs a seeded database; starts the dev server if needed)
 npm run db:clean-tests  # remove any data left by interrupted test runs
 ```
 
@@ -179,7 +179,9 @@ npm run db:clean-tests  # remove any data left by interrupted test runs
   tests** run against the database using uniquely tagged rows that are deleted afterwards, so seed data is never
   touched.
 - **End-to-end tests** cover login and role redirects, API access control (403/404/401), a learner completing the
-  simulation and the admin seeing the score, and an **axe accessibility scan** (WCAG 2.1 A/AA) of every page.
+  simulation and the admin seeing the score, an admin adding a learner and assigning the activity through the UI,
+  CSV exports, the audit log filters, and an **axe accessibility scan** (WCAG 2.1 A/AA) of every page. Test
+  learners are removed automatically after each run.
 - Service and end-to-end tests need `DATABASE_URL`, and the end-to-end tests need `SEED_PASSWORD`.
 
 ## Deploying to Vercel with Neon
@@ -221,3 +223,5 @@ Local production check: `npm run build` then `AUTH_TRUST_HOST=true npx next star
   than mocked tests.
 - **Dates are bucketed in UTC** on the 30-day chart; a completion near midnight in South Africa (UTC+2) can land on
   the neighbouring day.
+- **Due dates are calendar days in UTC.** They display as the day the admin picked, and an assignment becomes
+  overdue at the end of that day UTC (01:59 the next morning in South Africa).

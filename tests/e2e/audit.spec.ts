@@ -30,14 +30,20 @@ test.describe("audit log", () => {
     await expect(page.getByLabel("Who", { exact: true })).toHaveValue("");
   });
 
-  test("the audit API validates dates and is admin-only", async ({ page }) => {
-    await signIn(page, "admin@pathway.test", /\/admin$/);
-    const bad = await page.request.get("/api/audit?from=2030-02-01&to=2030-01-01");
+  test("the audit API validates dates and is admin-only", async ({ browser }) => {
+    const adminContext = await browser.newContext();
+    const admin = await adminContext.newPage();
+    await signIn(admin, "admin@pathway.test", /\/admin$/);
+    const bad = await admin.request.get("/api/audit?from=2030-02-01&to=2030-01-01");
     expect(bad.status()).toBe(400);
     expect((await bad.json()).error.fields.from).toBeTruthy();
+    await adminContext.close();
 
-    await page.context().clearCookies();
-    await signIn(page, "lerato@pathway.test", /\/learner$/);
-    expect((await page.request.get("/api/audit")).status()).toBe(403);
+    // A separate session for the learner (each user gets their own cookies).
+    const learnerContext = await browser.newContext();
+    const learner = await learnerContext.newPage();
+    await signIn(learner, "lerato@pathway.test", /\/learner$/);
+    expect((await learner.request.get("/api/audit")).status()).toBe(403);
+    await learnerContext.close();
   });
 });
