@@ -59,6 +59,13 @@
   --sim-text: #e6ecf7;
   --sim-muted: #a9b6d3;
   --sim-border: #2a3a5c;
+  --sim-raised: #1d2d4d;
+  /* Accent colours for text and icons on the dark panels (all >= 5.5:1 on --sim-panel). */
+  --sim-primary: #7b93ff;
+  --sim-success: #4ade80;
+  --sim-danger: #f87171;
+  --sim-warning: #fbbf24;
+  --sim-teal: #2dd4bf;
 
   --radius: 0.5rem; /* 8px: inputs and buttons. Cards use rounded-xl = 12px. */
 }
@@ -111,6 +118,12 @@
   --color-sim-text: var(--sim-text);
   --color-sim-muted: var(--sim-muted);
   --color-sim-border: var(--sim-border);
+  --color-sim-raised: var(--sim-raised);
+  --color-sim-primary: var(--sim-primary);
+  --color-sim-success: var(--sim-success);
+  --color-sim-danger: var(--sim-danger);
+  --color-sim-warning: var(--sim-warning);
+  --color-sim-teal: var(--sim-teal);
 
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
@@ -150,4 +163,24 @@
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* PC tower illustration: clickable parts (see components/simulation/pc-tower.tsx). */
+.pc-part {
+  cursor: pointer;
+  outline: none;
+}
+.pc-part .pc-part-outline {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 2;
+  stroke-dasharray: 5 4;
+}
+.pc-part:hover .pc-part-outline {
+  stroke: var(--sim-muted);
+}
+.pc-part:focus-visible .pc-part-outline,
+.pc-part[aria-pressed="true"] .pc-part-outline {
+  stroke: var(--sim-primary);
+  stroke-width: 3;
 }

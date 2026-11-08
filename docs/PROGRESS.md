@@ -12,10 +12,10 @@
 | Phase 2: Learner detail | Done | Profile, summary stats, score-over-time chart, assignments with expandable attempts showing every decision. The hidden fault is shown only for completed attempts (`attempt-view.ts`). |
 | Phase 2: Activities (create, assign) | Done | Cards with assigned/completed/avg score/completion. Create dialog (scenario must exist in the catalog). Assign dialog: individual learners and/or a whole cohort, optional due date (end of that day, UTC). `createMany(skipDuplicates)` skips existing assignments; toast reports added/skipped. Only ACTIVE learners can be assigned. The assign picker loads up to 100 active learners. |
 | Phase 2: stats.service tests | Done | `tests/unit/stats.service.test.ts`: pure rate and bucketing tests (zero assignments returns null) and DB tests on tagged fixtures for each metric definition and the overdue list. Plus `admin.services.test.ts`: duplicate email field error, audit on create, soft delete, search, skip-existing assignment. |
-| Phase 3: Simulation engine + tests | Not started | |
-| Phase 3: simulation.service + tests | Not started | |
-| Phase 3: Simulation workbench UI | Not started | |
-| Phase 3: Results screen | Not started | |
+| Phase 3: Simulation engine + tests | Done | Tests written first (`tests/unit/simulation-engine.test.ts`, 30 tests): expert path per fault >= 90, safety penalty + `static_risk`, unlocks, locked/unknown/completed rejections, redundant -3, wrong-diagnosis feedback, clamping, same seed same fault, purity. Engine (`src/lib/simulation/engine.ts`) has no `if (fault === ...)`: all fault behaviour is in `scenarios/hardware-troubleshooting.ts`. Added a data-driven `evidence` rule so a correct part swapped on a lucky guess fixes the PC but costs 10. |
+| Phase 3: simulation.service + tests | Done | Server-generated seed (`crypto.randomInt`), start/resume, state saved after every action, 409 on stale `expectedStep` enforced atomically (conditional `updateMany` on the stored step, so two simultaneous submissions produce exactly one winner; tested). Completion saves the score and marks the assignment COMPLETED. `toSimulationView` is the single place that reveals the fault, only when complete. 9 DB tests incl. cross-learner 404 and no fault before completion. |
+| Phase 3: Simulation workbench UI | Done | Dark workbench: top bar (title, step, live score, Exit and save), clickable SVG tower (each part is a focusable role=button; Enter/Space highlights related actions), symptoms, actions grouped Safety/Investigate/Repair/Diagnose with lock icon + hint, findings log, aria-live result banner. Tabs below 1024px. Verified by playing a full attempt in the browser. |
+| Phase 3: Results screen | Done | Score gauge, outcome band, hidden fault + explanation, decision-by-decision breakdown, efficiency bonus, expert path with "you did this / missed". In-progress attempts show a Resume link instead (no early reveal). |
 | Phase 4: Learner dashboard | Not started | |
 | Phase 4: My Progress | Not started | |
 | Phase 4: Cross-learner access test | Not started | |
@@ -39,3 +39,9 @@
 - **Completions chart counts all completions** (including learners deactivated since), because those completions happened. The KPI and per-activity rates follow the active-learner definitions exactly.
 - **Bulk assignment writes one audit entry per assign action** (with added/skipped counts) rather than one per learner.
 - **Known gap until Phase 8:** the "Audit log" nav item 404s until the audit page is built (Phase 8.2). The learner "My progress" link 404s until Phase 4.
+- **Seed now replays action lists through the real engine** (Phase 1 used hand-written histories). Demo attempts are matched by their fixed seed and refreshed in place on re-seed; assignments with real attempts are skipped.
+- **The scenario data never reaches the browser bundle.** Client components import `scenarios/catalog.ts` (keys, titles, fault names only); a unit test keeps it in sync with the scenario file.
+- **Every simulation action writes an audit entry** (`simulation.action`). The dashboard feed hides these as noise; the audit page will show them.
+- **Locked actions reveal a little information** (e.g. "Reseat the RAM" stays locked if listening finds no beep code). This is intentional and realistic: no beep code means memory isn't the suspect.
+- **Efficiency bonus follows the spec literally:** solved in 6 actions or fewer earns +10, even if those actions included penalties (seeded Ethan: 67 + 10 = 77).
+- **Flaky test run observed once:** one full `npm test` run had 1 failure in `admin.services` and a setup failure in `simulation.service`. The next 4 full runs all passed 68/68. Likely a transient Neon connection error, but I didn't capture the message. Recorded rather than hidden with retries.

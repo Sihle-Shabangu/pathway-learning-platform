@@ -132,10 +132,10 @@ export async function getCompletionByActivity(): Promise<ActivityCompletion[]> {
   });
 }
 
-/** Latest audit entries, excluding sign-ins (too noisy for a feed). */
+/** Latest audit entries, excluding sign-ins and individual simulation steps (too noisy for a feed). */
 export async function getRecentActivity(limit = 8): Promise<FeedItem[]> {
   const logs = await prisma.auditLog.findMany({
-    where: { action: { not: "auth.login" } },
+    where: { action: { notIn: ["auth.login", "simulation.action"] } },
     orderBy: { createdAt: "desc" },
     take: limit,
     include: { actor: { select: { name: true } } },

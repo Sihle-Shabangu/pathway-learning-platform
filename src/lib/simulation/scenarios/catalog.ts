@@ -1,17 +1,18 @@
-/** The scenarios an admin can build an activity from. Keep in sync with the scenario registry. */
-export const SCENARIO_OPTIONS = [
-  { key: "hardware-troubleshooting", title: "Diagnose the dead workstation" },
-] as const;
+/**
+ * Small, browser-safe facts about scenarios (keys, titles, fault names).
+ * Deliberately does NOT import the scenario data files: client components import this,
+ * and the full scenario (outcomes per fault) must never be shipped to the browser.
+ * tests/unit/scenario-catalog.test.ts checks these values match the scenario data.
+ */
+export const SCENARIO_OPTIONS = [{ key: "hardware-troubleshooting", title: "Diagnose the dead workstation" }] as const;
 
-export type ScenarioKey = (typeof SCENARIO_OPTIONS)[number]["key"];
-
-/** Display names for fault ids, used where the full scenario isn't loaded. */
-const FAULT_LABELS: Record<string, string> = {
+export const FAULT_NAMES: Record<string, string> = {
   FAULTY_RAM: "Faulty RAM module",
   FAILING_PSU: "Failing power supply",
   CPU_OVERHEATING: "CPU overheating",
 };
 
+/** Display name for a fault id (only ever shown for completed attempts). */
 export function faultLabel(faultId: string): string {
-  return FAULT_LABELS[faultId] ?? faultId;
+  return FAULT_NAMES[faultId] ?? faultId;
 }

@@ -11,6 +11,11 @@ export type Outcome = {
   setsFlags?: string[];
   /** True if this action fixes the hidden fault and ends the attempt. */
   resolves?: boolean;
+  /**
+   * For repairs that are right but could be a lucky guess: if none of these flags are set,
+   * `penalty` is added and `feedback` is prepended (e.g. replacing the PSU before testing it).
+   */
+  evidence?: { flags: string[]; penalty: number; feedback: string };
 };
 
 export type ScenarioAction = {
@@ -57,6 +62,8 @@ export type Scenario = {
   /** Flag added when a repair is attempted before the safety flags are set. */
   safetyViolationFlag: string;
   safetyViolationFeedback: string;
+  /** Shown instead of the normal outcome when an investigation is repeated. */
+  redundantInvestigationFeedback: string;
   faults: Fault[];
   actions: ScenarioAction[];
   scoring: ScoringRules;
@@ -87,4 +94,24 @@ export type SimulationState = {
   performedActionIds: string[];
   decisions: Decision[];
   status: SimulationStatus;
+  /** Efficiency bonus added on completion (0 if not earned). Already included in `score`. */
+  bonus: number;
+};
+
+/** One action as the UI sees it: whether it can be taken now, and why not. */
+export type AvailableAction = {
+  id: string;
+  label: string;
+  group: ActionGroup;
+  component?: string;
+  locked: boolean;
+  lockHint?: string;
+};
+
+/** What apply() returns. */
+export type ApplyResult = {
+  state: SimulationState;
+  feedback: string;
+  scoreDelta: number;
+  correct: boolean;
 };
