@@ -37,3 +37,28 @@ Seeded accounts (password is the value of `SEED_PASSWORD`):
 | `npm run db:migrate` | Create/apply migrations in development |
 | `npm run db:deploy` | Apply migrations in production |
 | `npm run db:seed` | Seed the database |
+
+## Deploying to Vercel with Neon
+
+1. **Create the database.** In Neon, create a project and copy two connection strings from *Connection details*:
+   the **pooled** string (host contains `-pooler`) and the **direct** string (pooling turned off).
+2. **Import the repository** into Vercel (*Add New → Project*). The framework is detected as Next.js and
+   `vercel.json` sets the build command to `npm run vercel-build`, which runs
+   `prisma generate && prisma migrate deploy && next build`, so migrations are applied on every deploy.
+3. **Set environment variables** in *Project → Settings → Environment Variables* (Production and Preview):
+
+   | Variable | Value |
+   | --- | --- |
+   | `DATABASE_URL` | Neon **pooled** connection string (used by the app at runtime) |
+   | `DIRECT_URL` | Neon **direct** connection string (used by `prisma migrate deploy` during the build) |
+   | `AUTH_SECRET` | A random secret, e.g. `npx auth secret` or `openssl rand -base64 32` |
+   | `SEED_PASSWORD` | Only needed if you run the seed against this database |
+
+   `AUTH_TRUST_HOST` is not needed on Vercel. Set it to `true` only when running `next start` yourself
+   (for example a local production check), otherwise Auth.js rejects the host with `UntrustedHost`.
+4. **Deploy.** The first build creates the tables.
+5. **Seed demo data (optional)** from your machine against the same database:
+   `npm run db:seed` with `DATABASE_URL`, `DIRECT_URL` and `SEED_PASSWORD` in your local `.env`.
+   The seed is idempotent, so running it again is safe.
+
+Local production check: `npm run build` then `AUTH_TRUST_HOST=true npx next start`.
