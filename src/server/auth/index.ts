@@ -6,6 +6,13 @@ import { authConfig } from "./auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
+  logger: {
+    // A wrong password is an expected outcome, not a server error: don't print a stack trace for it.
+    error(error) {
+      if (error.name === "CredentialsSignin") return;
+      console.error("[auth]", error);
+    },
+  },
   providers: [
     Credentials({
       credentials: {
